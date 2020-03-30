@@ -146,6 +146,26 @@ def pause_or_quit(): #used for handling scrolling through the program
 def Introduction_To_Iris_Data_Set():
     print("""
 This python application is used to access the Iris Dataset
+
+'The aim is to classify iris flowers among three species (setosa, versicolor or virginica) from measurements of length and width of sepals and petals.
+The iris data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant.'
+https://www.neuraldesigner.com/learning/examples/iris-flowers-classification
+
+
+This python application creates a text summary of the
+
+Mean sizes
+Minimum sizes
+Maximum sizes
+
+of the setosa, versicolor and virginica species of Iris.
+
+This python application also imports the pandas, matplotlib, seaborn, sklearn modules to provide graphical plot analysis
+in form of scatter plots and histograms.
+
+Comparing the species sepal length, sepal width, petal length, petal width.
+
+
 """)
     pause_or_quit()
 
@@ -382,9 +402,10 @@ PRESS KEY TO CONTINUE TO SEE RESULTS OF CODE
     pause_or_quit()
     
     df = pd.read_csv("IRIScsv.csv")
-    sns.pairplot(df, hue="variety")
+    sns.pairplot(df, kind='scatter',hue='variety')
     plt.show()
     
+
 
 def View_Data_As_Scatter_Plot():
     print("Save Scatter Plot")
