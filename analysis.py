@@ -8,6 +8,7 @@ from colorama import init, Fore, Back, Style
 from PIL import Image
 
 
+from sklearn import datasets
 
 # importing pandas as pd 
 import pandas as pd
@@ -20,13 +21,16 @@ IrisData = pd.read_csv('IRIScsv.csv')
 
 averageofdata = IrisData.mean(axis = 0, skipna = True)
 
+
+
+
 Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
 Iris_versicolor = IrisData.loc[IrisData['variety'] == 'Versicolor']
 Iris_virginica = IrisData.loc[IrisData['variety'] == 'Virginica']
 
 
 #Used for calculating averages
-averageofdata = IrisData.mean(axis = 0, skipna = True)
+averageofdata = IrisData.mean(axis = 0,skipna = True)
 average_of_Setosa = Iris_setosa.mean(axis = 0, skipna = True)
 average_of_Versicolor = Iris_versicolor.mean(axis = 0, skipna = True)
 average_of_Virginica = Iris_virginica.mean(axis = 0, skipna = True)
@@ -66,6 +70,15 @@ def main():
     display_menu()
 
 
+
+
+
+
+
+
+
+
+
     while True:
         choice = input("Enter choice: ")
         if (choice == "1"):
@@ -79,18 +92,27 @@ def main():
         elif (choice == "3"):
             clear_screen()
             View_Average_Sizes_Iris()
+            View_Average_of_Setosa()
+            View_Average_of_Versicolor()
+            View_Average_of_Virginica()
             display_menu()
         elif (choice == "4"):
             clear_screen()
             View_Minimum_Sizes_Iris()
+            View_Minimum_Sizes_Setosa()
+            View_Minimum_Sizes_Versicolor()
+            View_Minimum_Sizes_Virginica()
             display_menu()
         elif (choice == "5"):
             clear_screen()
             View_Maximum_Sizes_Iris()
+            View_Maximum_Sizes_Setosa()
+            View_Maximum_Sizes_Versicolor()
+            View_Maximum_Sizes_Virginica()
             display_menu()
         elif (choice == "6"):
             clear_screen()
-            
+            Save_Summary_Of_Average_Iris_Sizes_To_Text_File()
             display_menu()
         elif (choice == "7"):
             clear_screen()
@@ -98,11 +120,11 @@ def main():
             display_menu()
         elif (choice == "8"):
             clear_screen()
-            View_Data_As_Histogram()
+            View_Data_As_Scatter_Plot()
             display_menu()
         elif (choice == "9"):
             clear_screen()
-            Save_Histogram()
+            View_Data_As_Histogram()
             display_menu()
 
         elif (choice == "x"):
@@ -111,12 +133,10 @@ def main():
             display_menu()
 
 
-def pause_or_quit():
+def pause_or_quit(): #used for handling scrolling through the program
     print("\n\n")
     os.system("""bash -c 'read -s -n 1 -p "Press any key to continue or q to quit..."'""")
     clear_screen()
-
-
  
     if keyboard.is_pressed('q'):  # if key 'q' is pressed
         print('returning to menu!')
@@ -175,38 +195,31 @@ RESULTS OF CODE
     # sum over the column axis.
     
     print(Fore.WHITE + "Average Sizes of All Iris Data")
-    print(averageofdata)
+    print(pd.DataFrame(averageofdata))
 
 
 
 
     pause_or_quit()
 
+
+def View_Average_of_Setosa():
     print("Average of Setosa")
-    
-    print(average_of_Setosa)
-
+    print(pd.DataFrame(average_of_Setosa))
     pause_or_quit()
         
 
-
-
+def View_Average_of_Versicolor():
     print("Average of Versicolor")
-    
-    print(average_of_Versicolor)
-
+    print(pd.DataFrame(average_of_Versicolor))
     pause_or_quit()
         
 
-
+def View_Average_of_Virginica():
     print("Average of Virginica")
-    
-    print(average_of_Virginica)
-
+    print(pd.DataFrame(average_of_Virginica))
     pause_or_quit()
         
-
-
 
 def View_Minimum_Sizes_Iris():
     print(Fore.GREEN + """
@@ -233,32 +246,25 @@ RESULTS OF CODE
     # sum over the column axis.
     
     print(Fore.WHITE + "Minium Sizes of All Iris Data")
-    print(minimum_of_data)
-
-
-
-
+    print(pd.DataFrame(minimum_of_data))
     pause_or_quit()
 
+
+def View_Minimum_Sizes_Setosa():
     print("Minimum of Setosa")
-    
-    print(minimum_of_Setosa)
-
+    print(pd.DataFrame(minimum_of_Setosa))
     pause_or_quit()
         
 
+def View_Minimum_Sizes_Versicolor():
     print("Minimum of Versicolor")
-    
-    print(minimum_of_Versicolor)
-
+    print(pd.DataFrame(minimum_of_Versicolor))
     pause_or_quit()
         
 
-
+def View_Minimum_Sizes_Virginica():
     print("Minimum of Virginica")
-    
-    print(minimum_of_Virginica)
-
+    print(pd.DataFrame(minimum_of_Virginica))
     pause_or_quit()
 
 
@@ -287,34 +293,25 @@ RESULTS OF CODE
     # sum over the column axis.
     
     print(Fore.WHITE + "Maximum Sizes of All Iris Data")
-    print(maximum_of_data)
-
-
-
-
+    print(pd.DataFrame(maximum_of_data))
     pause_or_quit()
 
+
+def View_Maximum_Sizes_Setosa():
     print("Maximum of Setosa")
-    
-    print(maximum_of_Setosa)
-
+    print(pd.DataFrame(maximum_of_Setosa))
     pause_or_quit()
         
 
-
-
+def View_Maximum_Sizes_Versicolor():
     print("Maximum of Versicolor")
-    
-    print(maximum_of_Versicolor)
-
+    print(pd.DataFrame(maximum_of_Versicolor))
     pause_or_quit()
         
 
-
+def View_Maximum_Sizes_Virginica():
     print("Maximum of Virginica")
-    
-    print(maximum_of_Virginica)
-
+    print(pd.DataFrame(maximum_of_Virginica))
     pause_or_quit()
         
 
@@ -323,6 +320,46 @@ RESULTS OF CODE
 
 def Save_Summary_Of_Average_Iris_Sizes_To_Text_File():
     print("Save Summary Of Average Iris Sizes To Text File")
+
+    myfile = input("Write a file name ending with .txt , this is where average, minimum, maximum data summarys will be saved  ...")
+    fileforappending = open(myfile, "w")
+    print(myfile + " has been created")
+    fileforappending.close()
+    print(myfile + " has been created and is ready for appending data.")
+    print("You will find your file here: ", os.getcwd(), "\\" , myfile)
+
+    print("Average Of All Iris", file=open(myfile, 'a'))
+    print(pd.DataFrame(averageofdata), file=open(myfile, 'a'))
+    print("Average Of Setosa", file=open(myfile, 'a'))
+    print(pd.DataFrame(average_of_Setosa), file=open(myfile, 'a'))
+    print("Average Of Versicolor", file=open(myfile, 'a'))
+    print(pd.DataFrame(average_of_Versicolor), file=open(myfile, 'a'))
+    print("Average Of Virginica", file=open(myfile, 'a'))    
+    print(pd.DataFrame(average_of_Virginica), file=open(myfile, 'a'))
+
+
+
+
+    print("Minimum Of All Iris", file=open(myfile, 'a'))
+    print(pd.DataFrame(minimum_of_data), file=open(myfile, 'a'))
+    print("Minimum Of Setosa", file=open(myfile, 'a'))
+    print(pd.DataFrame(minimum_of_Setosa), file=open(myfile, 'a'))
+    print("Minimum Of Versicolor", file=open(myfile, 'a'))
+    print(pd.DataFrame(minimum_of_Versicolor), file=open(myfile, 'a'))
+    print("Minimum Of Virginica", file=open(myfile, 'a'))
+    print(pd.DataFrame(minimum_of_Virginica), file=open(myfile, 'a'))
+
+
+
+    print("Maximum Of All Iris", file=open(myfile, 'a'))
+    print(pd.DataFrame(maximum_of_data), file=open(myfile, 'a'))
+    print("Maximum Of All Setosa", file=open(myfile, 'a'))
+    print(pd.DataFrame(maximum_of_Setosa), file=open(myfile, 'a'))
+    print("Maximum Of All Versicolor", file=open(myfile, 'a'))
+    print(pd.DataFrame(maximum_of_Versicolor), file=open(myfile, 'a'))
+    print("Maximum Of All Virginica", file=open(myfile, 'a'))    
+    print(pd.DataFrame(maximum_of_Virginica), file=open(myfile, 'a'))
+
 
 def View_Data_As_Graph():
 
@@ -349,16 +386,45 @@ PRESS KEY TO CONTINUE TO SEE RESULTS OF CODE
     plt.show()
     
 
-def Save_Scatter_Plot():
+def View_Data_As_Scatter_Plot():
     print("Save Scatter Plot")
 
 
-def View_Data_As_Histogram():
-    print("View Data As Histogram")
-    
+    df = pd.read_csv("IRIScsv.csv")
 
-def Save_Histogram():
-    print("Save Histogram")
+    plt.scatter(df['sepal.length'], df['sepal.width'])
+    plt.title("Sepal length versus sepal width")
+    plt.xlabel("Sepal Length")
+    plt.ylabel("Sepal Width")
+    plt.show()
+
+    plt.scatter(df['petal.length'], df['petal.width'])
+    plt.title("Petal length versus sepal width")
+    plt.xlabel("Petal Length")
+    plt.ylabel("Petal Width")
+    plt.show()
+
+
+
+def View_Data_As_Histogram():
+
+    """source https://stackoverflow.com/questions/45721083/unable-to-plot-4-histograms-of-iris-dataset-features-using-matplotlib"""
+    iris= datasets.load_iris()
+
+    fig, axes = plt.subplots(nrows= 2, ncols=2)
+    colors= ['blue', 'red', 'green']
+
+    for i, ax in enumerate(axes.flat):
+        for label, color in zip(range(len(iris.target_names)), colors):
+            ax.hist(iris.data[iris.target==label, i], label=             
+                                iris.target_names[label], color=color)
+            ax.set_xlabel(iris.feature_names[i])  
+            ax.legend(loc='upper right')
+
+
+    plt.show()
+
+
 
 
 """
