@@ -19,18 +19,18 @@ import seaborn as sns
 IrisData = pd.read_csv('IRIScsv.csv')
 
 
-averageofdata = IrisData.mean(axis = 0, skipna = True)
 
 
 
 
+#Used for filtering variety column
 Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
 Iris_versicolor = IrisData.loc[IrisData['variety'] == 'Versicolor']
 Iris_virginica = IrisData.loc[IrisData['variety'] == 'Virginica']
 
 
 #Used for calculating averages
-averageofdata = IrisData.mean(axis = 0,skipna = True)
+average_of_data = IrisData.mean(axis = 0,skipna = True)
 average_of_Setosa = Iris_setosa.mean(axis = 0, skipna = True)
 average_of_Versicolor = Iris_versicolor.mean(axis = 0, skipna = True)
 average_of_Virginica = Iris_virginica.mean(axis = 0, skipna = True)
@@ -225,7 +225,7 @@ RESULTS OF CODE
     # sum over the column axis.
     
     print(Fore.WHITE + "Average Sizes of All Iris Data")
-    print(pd.DataFrame(averageofdata))
+    print(pd.DataFrame(average_of_data))
 
 
 
@@ -234,22 +234,47 @@ RESULTS OF CODE
 
 
 def View_Average_of_Setosa():
-    print("Average of Setosa")
+
+    print(Fore.GREEN +"""
+CODE USED TO GET THE AVERAGE SIZE OF SETOSA
+
+# importing pandas as pd 
+import pandas as pd
+
+# Creating the dataframe 
+IrisData = pd.read_csv('IRIScsv.csv')
+
+#Used for filtering variety column
+Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
+
+#Used for calculating averages
+average_of_Setosa = Iris_setosa.mean(axis = 0, skipna = True)
+
+print("Average of Setosa")
+print(pd.DataFrame(average_of_Setosa))
+
+
+RESULTS OF CODE
+""")
+    
+    print(Fore.WHITE +"Average of Setosa")
     print(pd.DataFrame(average_of_Setosa))
     pause_or_quit()
-        
+    clear_screen()
+         
 
 def View_Average_of_Versicolor():
     print("Average of Versicolor")
     print(pd.DataFrame(average_of_Versicolor))
     pause_or_quit()
+    clear_screen()
         
 
 def View_Average_of_Virginica():
     print("Average of Virginica")
     print(pd.DataFrame(average_of_Virginica))
     pause_or_quit()
-        
+    clear_screen()       
 
 def View_Minimum_Sizes_Iris():
     print(Fore.GREEN + """
@@ -274,28 +299,59 @@ RESULTS OF CODE
 #https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/   
 
     # sum over the column axis.
-    
+
+
+
+
+  
     print(Fore.WHITE + "Minium Sizes of All Iris Data")
     print(pd.DataFrame(minimum_of_data))
     pause_or_quit()
+    clear_screen()
 
 
 def View_Minimum_Sizes_Setosa():
-    print("Minimum of Setosa")
+
+    print(Fore.GREEN +"""
+CODE USED TO GET THE MINIMUM SIZE OF SETOSA
+
+# importing pandas as pd 
+import pandas as pd
+
+# Creating the dataframe 
+IrisData = pd.read_csv('IRIScsv.csv')
+
+#Used for filtering variety column
+Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
+
+#Used for calculating averages
+minimum_of_Setosa = Iris_setosa.min(axis = 0, skipna = True)
+
+print("Minimum of Setosa")
+print(pd.DataFrame(minimum_of_Setosa))
+
+
+RESULTS OF CODE
+""")
+    
+    print(Fore.WHITE +"Minimum of Setosa")
     print(pd.DataFrame(minimum_of_Setosa))
     pause_or_quit()
+    clear_screen()
         
 
 def View_Minimum_Sizes_Versicolor():
     print("Minimum of Versicolor")
     print(pd.DataFrame(minimum_of_Versicolor))
     pause_or_quit()
+    clear_screen()
         
 
 def View_Minimum_Sizes_Virginica():
     print("Minimum of Virginica")
     print(pd.DataFrame(minimum_of_Virginica))
     pause_or_quit()
+    clear_screen()
 
 
 def View_Maximum_Sizes_Iris():
@@ -325,28 +381,53 @@ RESULTS OF CODE
     print(Fore.WHITE + "Maximum Sizes of All Iris Data")
     print(pd.DataFrame(maximum_of_data))
     pause_or_quit()
+    clear_screen()
 
 
 def View_Maximum_Sizes_Setosa():
-    print("Maximum of Setosa")
+
+    print(Fore.GREEN +"""
+CODE USED TO GET THE MAXIMUM SIZE OF SETOSA
+
+# importing pandas as pd 
+import pandas as pd
+
+# Creating the dataframe 
+IrisData = pd.read_csv('IRIScsv.csv')
+
+#Used for filtering variety column
+Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
+
+#Used for calculating averages
+maximum_of_Setosa = Iris_setosa.max(axis = 0, skipna = True)
+
+print("Maximum of Setosa")
+print(pd.DataFrame(maximum_of_Setosa))
+
+
+RESULTS OF CODE
+""")
+
+    
+    print(Fore.WHITE+"Maximum of Setosa")
     print(pd.DataFrame(maximum_of_Setosa))
     pause_or_quit()
+    clear_screen()
         
 
 def View_Maximum_Sizes_Versicolor():
     print("Maximum of Versicolor")
     print(pd.DataFrame(maximum_of_Versicolor))
     pause_or_quit()
+    clear_screen()
         
 
 def View_Maximum_Sizes_Virginica():
     print("Maximum of Virginica")
     print(pd.DataFrame(maximum_of_Virginica))
     pause_or_quit()
+    clear_screen()
         
-
-
-
 
 def Save_Summary_Of_Average_Iris_Sizes_To_Text_File():
     print("Save Summary Of Average Iris Sizes To Text File")
