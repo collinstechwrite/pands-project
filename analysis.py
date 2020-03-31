@@ -144,13 +144,23 @@ def pause_or_quit(): #used for handling scrolling through the program
 
 
 def Introduction_To_Iris_Data_Set():
-    print("""
+    print(Fore.GREEN + """
+
+
+
+An understanding of the Iris flower data set, is  the ideal starting place to learn LDA (Linear Discriminant Analysis). Linear Discriminant Analysis was the first statistical method used for Bankruptcy prediction, Face recognition, and widely used in Marketing. These modern day LDA technologies have roots in the work of Sir Ronald Alymer Fisher, a British statistician and geneticist, who is acclaimed for his work in statistics. In 1936 Fisher introduced the Iris flower data set as an example of discriminant analysis. 
+The iris data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant. Containing only 150 observations of petal length, petal width, sepal width, sepal length the data set is small but not trivial.  The Iris dataset is deservedly widely used throughout statistical science, especially for illustrating various problems in statistical graphics, multivariate statistics and machine learning.
+The Iris data set is such a popular data set for teaching computer science and machine learning, so it is inbuilt and accessible in machine learning module libraries used with Python such as scikit learn and R.
+""")
+
+    
+
+    pause_or_quit()
+
+    print(Fore.GREEN + """
+
+
 This python application is used to access the Iris Dataset
-
-'The aim is to classify iris flowers among three species (setosa, versicolor or virginica) from measurements of length and width of sepals and petals.
-The iris data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant.'
-https://www.neuraldesigner.com/learning/examples/iris-flowers-classification
-
 
 This python application creates a text summary of the
 
@@ -261,7 +271,7 @@ print(minimum_of_data)
 RESULTS OF CODE
 """)
 
-   
+#https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/   
 
     # sum over the column axis.
     
@@ -408,8 +418,43 @@ PRESS KEY TO CONTINUE TO SEE RESULTS OF CODE
 
 
 def View_Data_As_Scatter_Plot():
-    print("Save Scatter Plot")
+    print(Fore.GREEN +"""CODE NEEDED TO SAVE SCATTER PLOT
 
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("IRIScsv.csv")
+
+plt.scatter(df['sepal.length'], df['sepal.width'])
+plt.title("Sepal length versus sepal width")
+plt.xlabel("Sepal Length")
+plt.ylabel("Sepal Width")
+plt.savefig("scatter.png")
+plt.clf()""")
+
+
+    pause_or_quit()
+
+
+
+    print(Fore.GREEN +"""
+CODE NEEDED TO DISPLAY SCATTER PLOT
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("IRIScsv.csv")
+
+plt.scatter(df['sepal.length'], df['sepal.width'])
+plt.title("Sepal length versus sepal width")
+plt.xlabel("Sepal Length")
+plt.ylabel("Sepal Width")
+plt.show()
+
+
+""")
+
+    pause_or_quit()
 
     df = pd.read_csv("IRIScsv.csv")
 
@@ -417,13 +462,16 @@ def View_Data_As_Scatter_Plot():
     plt.title("Sepal length versus sepal width")
     plt.xlabel("Sepal Length")
     plt.ylabel("Sepal Width")
+    plt.savefig("scatter.png")
+    plt.clf()
+
+
+    plt.scatter(df['sepal.length'], df['sepal.width'])
+    plt.title("Sepal length versus sepal width")
+    plt.xlabel("Sepal Length")
+    plt.ylabel("Sepal Width")
     plt.show()
 
-    plt.scatter(df['petal.length'], df['petal.width'])
-    plt.title("Petal length versus sepal width")
-    plt.xlabel("Petal Length")
-    plt.ylabel("Petal Width")
-    plt.show()
 
 
 
@@ -466,8 +514,8 @@ def display_menu():
     print("5 – View Maximum Sizes Iris")
     print("6 – Save Summary Data To Text File")
     print("7 – View Data As Paired Graph Plots")
-    print("8 – Vied Data As Scatter Plot")
-    print("9 – View Data As Histogram")
+    print("8 – Save Data As Scatter Plot")
+    print("9 – Save Data As Histogram")
     print("x – Exit application")
 
 
