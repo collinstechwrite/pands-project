@@ -558,30 +558,180 @@ plt.show()
 
 def View_Data_As_Histogram():
 
-    """source https://stackoverflow.com/questions/45721083/unable-to-plot-4-histograms-of-iris-dataset-features-using-matplotlib"""
-    iris= datasets.load_iris()
+    print(Fore.GREEN +"""
+    CODE NEEDED TO DISPLAY HISTOGRAM
 
-    fig, axes = plt.subplots(nrows= 2, ncols=2)
-    colors= ['blue', 'red', 'green']
+    import numpy as np
+    import pandas as pd
+    from numpy.random import randn
+    from scipy import stats
+    import matplotlib as mpl
+    import matplotlib.pyplot as plt
+    import seaborn as sns
 
-    for i, ax in enumerate(axes.flat):
-        for label, color in zip(range(len(iris.target_names)), colors):
-            ax.hist(iris.data[iris.target==label, i], label=             
-                                iris.target_names[label], color=color)
-            ax.set_xlabel(iris.feature_names[i])  
-            ax.legend(loc='upper right')
+    # Creating the dataframe 
+    IrisData = pd.read_csv('IRIScsv.csv')
+
+    #Used for filtering variety column into the separate varieties of flower
+    Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
+    Iris_versicolor = IrisData.loc[IrisData['variety'] == 'Versicolor']
+    Iris_virginica = IrisData.loc[IrisData['variety'] == 'Virginica']
+
+    #Used for filtering the separate varieties of flower and just referencing one column e.g. sepal length or sepal width
+    Setosa_Sepal_Length = Iris_setosa.filter(items=['sepal.length'])
+    Versicolor_Sepal_Length = Iris_versicolor.filter(items=['sepal.length'])
+    Virginica_Sepal_Length = Iris_virginica.filter(items=['sepal.length'])
 
 
+    #extracting dataset for histogram
+    dataset1 = pd.DataFrame(Setosa_Sepal_Length)
+    dataset2 = pd.DataFrame(Versicolor_Sepal_Length)
+    dataset3 = pd.DataFrame(Virginica_Sepal_Length)
+
+    #converts the dataframes to arrays to be used in histogram
+    dataset1 = dataset1.to_numpy()
+    dataset2 = dataset2.to_numpy()
+    dataset3 = dataset3.to_numpy()
+
+    plt.hist(dataset1, color='blue', label='Setosa', alpha=0.5,bins=50, )
+    plt.hist(dataset2, color='orange', label='Versicolor', alpha=0.5,bins=50)
+    plt.hist(dataset3, color='green',label='Virginica', alpha=0.5,bins=50)
+    plt.xlabel('Size cm')
+    plt.title("Sepal Length Comparison")
+    plt.show()
+""")
+
+    pause_or_quit()
+
+    print(Fore.GREEN +"""
+    CODE NEEDED TO SAVE HISTOGRAM
+
+    import numpy as np
+    import pandas as pd
+    from numpy.random import randn
+    from scipy import stats
+    import matplotlib as mpl
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+
+    # Creating the dataframe 
+    IrisData = pd.read_csv('IRIScsv.csv')
+
+    #Used for filtering variety column into the separate varieties of flower
+    Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
+    Iris_versicolor = IrisData.loc[IrisData['variety'] == 'Versicolor']
+    Iris_virginica = IrisData.loc[IrisData['variety'] == 'Virginica']
+
+    #Used for filtering the separate varieties of flower and just referencing one column e.g. sepal length or sepal width
+    Setosa_Sepal_Length = Iris_setosa.filter(items=['sepal.length'])
+    Versicolor_Sepal_Length = Iris_versicolor.filter(items=['sepal.length'])
+    Virginica_Sepal_Length = Iris_virginica.filter(items=['sepal.length'])
+
+
+    #extracting dataset for histogram
+    dataset1 = pd.DataFrame(Setosa_Sepal_Length)
+    dataset2 = pd.DataFrame(Versicolor_Sepal_Length)
+    dataset3 = pd.DataFrame(Virginica_Sepal_Length)
+
+    #converts the dataframes to arrays to be used in histogram
+    dataset1 = dataset1.to_numpy()
+    dataset2 = dataset2.to_numpy()
+    dataset3 = dataset3.to_numpy()
+
+    plt.hist(dataset1, color='blue', label='Setosa', alpha=0.5,bins=50, )
+    plt.hist(dataset2, color='orange', label='Versicolor', alpha=0.5,bins=50)
+    plt.hist(dataset3, color='green',label='Virginica', alpha=0.5,bins=50)
+    plt.xlabel('Size cm')
+    plt.title("Sepal Length Comparison")
+    plt.savefig("histogram.png")
+    plt.clf()""")
+
+    pause_or_quit()
+
+
+    
+
+    import numpy as np
+    import pandas as pd
+    from numpy.random import randn
+    from scipy import stats
+    import matplotlib as mpl
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+
+    # Creating the dataframe 
+    IrisData = pd.read_csv('IRIScsv.csv')
+
+    #Used for filtering variety column into the separate varieties of flower
+    Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
+    Iris_versicolor = IrisData.loc[IrisData['variety'] == 'Versicolor']
+    Iris_virginica = IrisData.loc[IrisData['variety'] == 'Virginica']
+
+    #Used for filtering the separate varieties of flower and just referencing one column e.g. sepal length or sepal width
+    Setosa_Sepal_Length = Iris_setosa.filter(items=['sepal.length'])
+    Versicolor_Sepal_Length = Iris_versicolor.filter(items=['sepal.length'])
+    Virginica_Sepal_Length = Iris_virginica.filter(items=['sepal.length'])
+
+
+    #extracting dataset for histogram
+    dataset1 = pd.DataFrame(Setosa_Sepal_Length)
+    dataset2 = pd.DataFrame(Versicolor_Sepal_Length)
+    dataset3 = pd.DataFrame(Virginica_Sepal_Length)
+
+    #converts the dataframes to arrays to be used in histogram
+    dataset1 = dataset1.to_numpy()
+    dataset2 = dataset2.to_numpy()
+    dataset3 = dataset3.to_numpy()
+
+    plt.hist(dataset1, color='blue', label='Setosa', alpha=0.5,bins=50, )
+    plt.hist(dataset2, color='orange', label='Versicolor', alpha=0.5,bins=50)
+    plt.hist(dataset3, color='green',label='Virginica', alpha=0.5,bins=50)
+    plt.xlabel('Size cm')
+    plt.title("Sepal Length Comparison")
+    plt.savefig("histogram.png")
+    plt.clf()
+
+    
+
+    import numpy as np
+    import pandas as pd
+    from numpy.random import randn
+    from scipy import stats
+    import matplotlib as mpl
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+
+    # Creating the dataframe 
+    IrisData = pd.read_csv('IRIScsv.csv')
+
+    #Used for filtering variety column into the separate varieties of flower
+    Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
+    Iris_versicolor = IrisData.loc[IrisData['variety'] == 'Versicolor']
+    Iris_virginica = IrisData.loc[IrisData['variety'] == 'Virginica']
+
+    #Used for filtering the separate varieties of flower and just referencing one column e.g. sepal length or sepal width
+    Setosa_Sepal_Length = Iris_setosa.filter(items=['sepal.length'])
+    Versicolor_Sepal_Length = Iris_versicolor.filter(items=['sepal.length'])
+    Virginica_Sepal_Length = Iris_virginica.filter(items=['sepal.length'])
+
+
+    #extracting dataset for histogram
+    dataset1 = pd.DataFrame(Setosa_Sepal_Length)
+    dataset2 = pd.DataFrame(Versicolor_Sepal_Length)
+    dataset3 = pd.DataFrame(Virginica_Sepal_Length)
+
+    #converts the dataframes to arrays to be used in histogram
+    dataset1 = dataset1.to_numpy()
+    dataset2 = dataset2.to_numpy()
+    dataset3 = dataset3.to_numpy()
+
+    plt.hist(dataset1, color='blue', label='Setosa', alpha=0.5,bins=50, )
+    plt.hist(dataset2, color='orange', label='Versicolor', alpha=0.5,bins=50)
+    plt.hist(dataset3, color='green',label='Virginica', alpha=0.5,bins=50)
+    plt.xlabel('Size cm')
+    plt.title("Sepal Length Comparison")
     plt.show()
 
-
-
-
-"""
-outputs a summary of each variable to a single text file,
-saves a histogram of each variable to png files, and
-outputs a scatter plot of each pair of variables.
-"""
 
 def display_menu():
     print(Fore.WHITE +"Iris Data Set")
