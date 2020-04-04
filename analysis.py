@@ -3,63 +3,25 @@ Author Christopher Collins
 """
 
 #imports required to run analysis.py
-import pandas as pd
-import seaborn as sns
-import numpy as np
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-from colorama import init, Fore, Back, Style
-from PIL import Image
-import matplotlib.image as mpimg 
-#for handling keyboard reactions and pausing
+import pandas as pd #used for handling data
+import numpy as np #used for handling data
+import seaborn as sns #used for graphs
+import matplotlib as mpl #used for graphs
+import matplotlib.pyplot as plt #used for graph plotting
+from colorama import init, Fore, Back, Style #used for colourful fonts
+from PIL import Image # used for image display
+import matplotlib.image as mpimg # used for being able to add background images to graphs
 import keyboard  # using module keyboard
-import os
+import os #for handling keyboard reactions and pausing
 
 
-
-# Creating the dataframe 
-iris = pd.read_csv('IRIS.csv')
-
-
-#Used for filtering type column
-iris_setosa = iris.loc[iris['type'] == 'Setosa']
-iris_versicolor = iris.loc[iris['type'] == 'Versicolor']
-iris_virginica = iris.loc[iris['type'] == 'Virginica']
-
-
-#Used for calculating averages
-average_of_data = iris.mean(axis = 0,skipna = True)
-average_of_Setosa = iris_setosa.mean(axis = 0, skipna = True)
-average_of_Versicolor = iris_versicolor.mean(axis = 0, skipna = True)
-average_of_Virginica = iris_virginica.mean(axis = 0, skipna = True)
-
-
-#Used for calculating maximum
-maximum_of_data = iris.max(axis = 0, skipna = True)
-maximum_of_Setosa = iris_setosa.max(axis = 0, skipna = True)
-maximum_of_Versicolor = iris_versicolor.max(axis = 0, skipna = True)
-maximum_of_Virginica = iris_virginica.max(axis = 0, skipna = True)
-
-
-#Used for calculating minimum
-minimum_of_data = iris.min(axis = 0, skipna = True)
-minimum_of_Setosa = iris_setosa.min(axis = 0, skipna = True)
-minimum_of_Versicolor = iris_versicolor.min(axis = 0, skipna = True)
-minimum_of_Virginica = iris_virginica.min(axis = 0, skipna = True)
-
-
-
-
-def clear_screen():
-    os.system("cls")
 
 
 # Main function , code was repurposed from lecture menu
 def main():
     # Initialise array
     array = []
-
-    display_menu()
+    display_menu() #This function calls the user menu
 
 
 
@@ -131,7 +93,10 @@ def main():
             display_menu()
 
 
-def display_menu():
+def clear_screen(): #this function is used for clearing the screen
+    os.system("cls")
+
+def display_menu(): #this funtion is used to display the menu
     print(Fore.WHITE +"Iris Data Set")
     print("--------")
     print("MENU")
@@ -223,6 +188,41 @@ Press key to see image load.
     image.show()
 
 
+
+"""SETTING DATA VARIABLES -------------------------------------------------------------------------------------------"""
+# Creating the dataframe 
+iris = pd.read_csv('IRIS.csv')
+
+
+#Used for filtering type column
+iris_setosa = iris.loc[iris['type'] == 'Setosa']
+iris_versicolor = iris.loc[iris['type'] == 'Versicolor']
+iris_virginica = iris.loc[iris['type'] == 'Virginica']
+
+
+#Used for calculating averages
+average_of_data = iris.mean(axis = 0,skipna = True)
+average_of_Setosa = iris_setosa.mean(axis = 0, skipna = True)
+average_of_Versicolor = iris_versicolor.mean(axis = 0, skipna = True)
+average_of_Virginica = iris_virginica.mean(axis = 0, skipna = True)
+
+
+#Used for calculating maximum
+maximum_of_data = iris.max(axis = 0, skipna = True)
+maximum_of_Setosa = iris_setosa.max(axis = 0, skipna = True)
+maximum_of_Versicolor = iris_versicolor.max(axis = 0, skipna = True)
+maximum_of_Virginica = iris_virginica.max(axis = 0, skipna = True)
+
+
+#Used for calculating minimum
+minimum_of_data = iris.min(axis = 0, skipna = True)
+minimum_of_Setosa = iris_setosa.min(axis = 0, skipna = True)
+minimum_of_Versicolor = iris_versicolor.min(axis = 0, skipna = True)
+minimum_of_Virginica = iris_virginica.min(axis = 0, skipna = True)
+
+"""------------------------------------------------------------------------------------------------------------------"""
+
+
 def View_Average_Sizes_Iris():
     print(Fore.GREEN + """
 CODE USED TO GET THE AVERAGE SIZE OF ALL IRIS
@@ -234,10 +234,10 @@ import pandas as pd
 iris = pd.read_csv('IRIS.csv')
 
 # sum over the column axis.
-averageofdata = iris.mean(axis = 0, skipna = True)
+average_of_data = iris.mean(axis = 0, skipna = True)
 
 print("Average Sizes of All Iris Data")
-print(averageofdata)
+print(average_of_data)
 
 
 RESULTS OF CODE
@@ -463,7 +463,7 @@ def Save_Summary_Of_Average_Iris_Sizes_To_Text_File():
     print("You will find your file here: ", os.getcwd(), "\\" , myfile)
 
     print("Average Of All Iris", file=open(myfile, 'a'))
-    print(pd.DataFrame(averageofdata), file=open(myfile, 'a'))
+    print(pd.DataFrame(average_of_data), file=open(myfile, 'a'))
     print("Average Of Setosa", file=open(myfile, 'a'))
     print(pd.DataFrame(average_of_Setosa), file=open(myfile, 'a'))
     print("Average Of Versicolor", file=open(myfile, 'a'))
