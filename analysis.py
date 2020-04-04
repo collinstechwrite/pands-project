@@ -45,10 +45,6 @@ minimum_of_Versicolor = iris_versicolor.min(axis = 0, skipna = True)
 minimum_of_Virginica = iris_virginica.min(axis = 0, skipna = True)
 
 
-
-
-
-
 #for handling keyboard reactions and pausing
 import keyboard  # using module keyboard
 import os
@@ -63,15 +59,6 @@ def main():
     array = []
 
     display_menu()
-
-
-
-
-
-
-
-
-
 
 
     while True:
@@ -504,38 +491,46 @@ def View_Data_As_Scatter_Plot():
     map_img = mpimg.imread('Iris_setosa_image_wikimdia_commons.jpg')
     ax = sns.scatterplot(x="petal_length", y="petal_width", hue="type", data=mydata)
     plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
+    plt.title("Petal Length & Petal Width Comparison cm")
     plt.show()
 
 
     ax = sns.scatterplot(x="petal_length", y="sepal_width", hue="type", data=mydata)
+    plt.title("Petal Length & Sepal Width Comparison cm")
     plt.show()
 
 
     ax = sns.scatterplot(x="petal_length", y="sepal_length", hue="type", data=mydata)
+    plt.title("Petal Length & Sepal Width Comparison cm")
     plt.show()
 
 
     #petal_width
 
     ax = sns.scatterplot(x="petal_width", y="petal_length", hue="type", data=mydata)
+    plt.title("Petal Width & Petal Length Comparison cm")
     plt.show()
 
 
     ax = sns.scatterplot(x="petal_width", y="sepal_width", hue="type", data=mydata)
+    plt.title("Petal Width & Sepal Width Comparison cm")
     plt.show()
 
 
     ax = sns.scatterplot(x="petal_width", y="sepal_length", hue="type", data=mydata)
+    plt.title("Petal Width & Sepal Length Comparison cm")
     plt.show()
 
 
     #sepal_length
 
     ax = sns.scatterplot(x="sepal_length", y="petal_length", hue="type", data=mydata)
+    plt.title("Sepal Length & Petal Length Comparison cm")
     plt.show()
 
 
     ax = sns.scatterplot(x="sepal_length", y="petal_width", hue="type", data=mydata)
+    plt.title("Sepal Length & Petal Width Comparison cm")
     plt.show()
 
     #Iris_virginica_sepal_wikimdia_commons.jpg
@@ -543,23 +538,113 @@ def View_Data_As_Scatter_Plot():
     map_img = mpimg.imread('Iris_virginica_sepal_wikimdia_commons.jpg')
     ax = sns.scatterplot(x="sepal_length", y="sepal_width", hue="type", data=mydata)
     plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
+    plt.title("Sepal Length & Sepal Width Comparison cm")
     plt.show()
 
 
     #sepal_width
 
     ax = sns.scatterplot(x="sepal_width", y="petal_length", hue="type", data=mydata)
+    plt.title("Sepal Width & Petal Length Comparison cm")
     plt.show()
 
 
     ax = sns.scatterplot(x="sepal_width", y="petal_width", hue="type", data=mydata)
+    plt.title("Sepal Width & Petal Width Comparison cm")
     plt.show()
 
 
     ax = sns.scatterplot(x="sepal_width", y="sepal_length", hue="type", data=mydata)
+    plt.title("Sepal Width & Sepal Length Comparison cm")
     plt.show()
 
 
+    """--------------------------------------------------------------------------"""
+    #SAVING THE SCATTER GRAPH FILES
+
+    #petal_length
+    #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
+    map_img = mpimg.imread('Iris_setosa_image_wikimdia_commons.jpg')
+    ax = sns.scatterplot(x="petal_length", y="petal_width", hue="type", data=mydata)
+    plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
+    plt.title("Petal Length & Petal Width Comparison cm")
+    plt.savefig("Petal Length & Petal Width Comparison.png")
+    plt.clf()
+
+
+    ax = sns.scatterplot(x="petal_length", y="sepal_width", hue="type", data=mydata)
+    plt.title("Petal Length & Sepal Width Comparison cm")
+    plt.savefig("Petal Length & Sepal Width Comparison.png")
+    plt.clf()
+
+
+    ax = sns.scatterplot(x="petal_length", y="sepal_length", hue="type", data=mydata)
+    plt.title("Petal Length & Sepal Width Comparison cm")
+    plt.savefig("Petal Length & Sepal Width Comparison.png")
+    plt.clf()
+
+
+    #petal_width
+
+    ax = sns.scatterplot(x="petal_width", y="petal_length", hue="type", data=mydata)
+    plt.title("Petal Width & Petal Length Comparison cm")
+    plt.savefig("Petal Width & Petal Length Comparison.png")
+    plt.clf()
+
+
+    ax = sns.scatterplot(x="petal_width", y="sepal_width", hue="type", data=mydata)
+    plt.title("Petal Width & Sepal Width Comparison cm")
+    plt.savefig("Petal Width & Sepal Width Comparison.png")
+    plt.clf()
+
+
+    ax = sns.scatterplot(x="petal_width", y="sepal_length", hue="type", data=mydata)
+    plt.title("Petal Width & Sepal Length Comparison cm")
+    plt.savefig("Petal Width & Sepal Length Comparison.png")
+    plt.clf()
+
+
+    #sepal_length
+
+    ax = sns.scatterplot(x="sepal_length", y="petal_length", hue="type", data=mydata)
+    plt.title("Sepal Length & Petal Length Comparison cm")
+    plt.savefig("Sepal Length & Petal Length Comparison.png")
+    plt.clf()
+
+
+    ax = sns.scatterplot(x="sepal_length", y="petal_width", hue="type", data=mydata)
+    plt.title("Sepal Length & Petal Width Comparison cm")
+    plt.savefig("Sepal Length & Petal Width Comparison.png")
+    plt.clf()
+
+    #Iris_virginica_sepal_wikimdia_commons.jpg
+    #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
+    map_img = mpimg.imread('Iris_virginica_sepal_wikimdia_commons.jpg')
+    ax = sns.scatterplot(x="sepal_length", y="sepal_width", hue="type", data=mydata)
+    plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
+    plt.title("Sepal Length & Sepal Width Comparison cm")
+    plt.savefig("Sepal Length & Sepal Width Comparison.png")
+    plt.clf()
+
+
+    #sepal_width
+
+    ax = sns.scatterplot(x="sepal_width", y="petal_length", hue="type", data=mydata)
+    plt.title("Sepal Width & Petal Length Comparison cm")
+    plt.savefig("Sepal Width & Petal Length Comparison.png")
+    plt.clf()
+
+
+    ax = sns.scatterplot(x="sepal_width", y="petal_width", hue="type", data=mydata)
+    plt.title("Sepal Width & Petal Width Comparison cm")
+    plt.savefig("Sepal Width & Petal Width Comparison.png")
+    plt.clf()
+
+
+    ax = sns.scatterplot(x="sepal_width", y="sepal_length", hue="type", data=mydata)
+    plt.title("Sepal Width & Sepal Length Comparison cm")
+    plt.savefig("Sepal Width & Sepal Length Comparison.png")
+    plt.clf()
 
     
     print(Fore.GREEN +"""CODE NEEDED TO SAVE SCATTER PLOT
@@ -660,7 +745,7 @@ def View_Data_As_Histogram():
     plt.hist(dataset2, color='orange', label='Versicolor', alpha=0.5,bins=50)
     plt.hist(dataset3, color='green',label='Virginica', alpha=0.5,bins=50)
     plt.xlabel('Size cm')
-    plt.title("Sepal Length Comparison")
+    plt.title("Sepal Length Comparison cm")
     plt.show()
 """)
 
@@ -705,7 +790,7 @@ def View_Data_As_Histogram():
     plt.hist(dataset2, color='orange', label='Versicolor', alpha=0.5,bins=50)
     plt.hist(dataset3, color='green',label='Virginica', alpha=0.5,bins=50)
     plt.xlabel('Size cm')
-    plt.title("Sepal Length Comparison")
+    plt.title("Sepal Length Comparison cm")
     plt.savefig("histogram.png")
     plt.clf()""")
 
@@ -750,7 +835,7 @@ def View_Data_As_Histogram():
     plt.hist(dataset2, color='orange', label='Versicolor', alpha=0.5,bins=50)
     plt.hist(dataset3, color='green',label='Virginica', alpha=0.5,bins=50)
     plt.xlabel('Size cm')
-    plt.title("Sepal Length Comparison")
+    plt.title("Sepal Length Comparison cm")
     plt.savefig("histogram.png")
     plt.clf()
 
@@ -792,7 +877,7 @@ def View_Data_As_Histogram():
     plt.hist(dataset2, color='orange', label='Versicolor', alpha=0.5,bins=50)
     plt.hist(dataset3, color='green',label='Virginica', alpha=0.5,bins=50)
     plt.xlabel('Size cm')
-    plt.title("Sepal Length Comparison")
+    plt.title("Sepal Length Comparison cm")
     plt.show()
 
 
