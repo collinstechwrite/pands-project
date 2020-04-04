@@ -456,8 +456,8 @@ def View_Maximum_Sizes_Virginica():
 
 def Save_Summary_Of_Average_Iris_Sizes_To_Text_File():
 
-    myfile = input("Write a file name ending with .txt, \nthis is where average, minimum, maximum data summarys will be saved:")
-    fileforappending = open("Average_Minimum_Maximum.txt", "w")
+    myfile = "Average_Minimum_Maximum.txt" 
+    fileforappending = open(myfile, "w")
     fileforappending.close()
     
     print("You will find your file here: ", os.getcwd()+ "\\" + "Average_Minimum_Maximum.txt") #use os.getcwd() to show user current working directory
