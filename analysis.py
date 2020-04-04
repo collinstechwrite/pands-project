@@ -2,52 +2,47 @@
 Author Christopher Collins
 """
 
-
-from colorama import init, Fore, Back, Style
-
-from PIL import Image
-
-
-from sklearn import datasets
-
-# importing pandas as pd 
+#imports required to run analysis.py
 import pandas as pd
-import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
+from numpy.random import randn
+from scipy import stats
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+from colorama import init, Fore, Back, Style
+from PIL import Image
+import matplotlib.image as mpimg 
 
 # Creating the dataframe 
-IrisData = pd.read_csv('IRIScsv.csv')
+iris = pd.read_csv('IRIS.csv')
 
 
-
-
-
-
-#Used for filtering variety column
-Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
-Iris_versicolor = IrisData.loc[IrisData['variety'] == 'Versicolor']
-Iris_virginica = IrisData.loc[IrisData['variety'] == 'Virginica']
+#Used for filtering type column
+iris_setosa = iris.loc[iris['type'] == 'Setosa']
+iris_versicolor = iris.loc[iris['type'] == 'Versicolor']
+iris_virginica = iris.loc[iris['type'] == 'Virginica']
 
 
 #Used for calculating averages
-average_of_data = IrisData.mean(axis = 0,skipna = True)
-average_of_Setosa = Iris_setosa.mean(axis = 0, skipna = True)
-average_of_Versicolor = Iris_versicolor.mean(axis = 0, skipna = True)
-average_of_Virginica = Iris_virginica.mean(axis = 0, skipna = True)
+average_of_data = iris.mean(axis = 0,skipna = True)
+average_of_Setosa = iris_setosa.mean(axis = 0, skipna = True)
+average_of_Versicolor = iris_versicolor.mean(axis = 0, skipna = True)
+average_of_Virginica = iris_virginica.mean(axis = 0, skipna = True)
 
 
 #Used for calculating maximum
-maximum_of_data = IrisData.max(axis = 0, skipna = True)
-maximum_of_Setosa = Iris_setosa.max(axis = 0, skipna = True)
-maximum_of_Versicolor = Iris_versicolor.max(axis = 0, skipna = True)
-maximum_of_Virginica = Iris_virginica.max(axis = 0, skipna = True)
+maximum_of_data = iris.max(axis = 0, skipna = True)
+maximum_of_Setosa = iris_setosa.max(axis = 0, skipna = True)
+maximum_of_Versicolor = iris_versicolor.max(axis = 0, skipna = True)
+maximum_of_Virginica = iris_virginica.max(axis = 0, skipna = True)
 
 
 #Used for calculating minimum
-minimum_of_data = IrisData.min(axis = 0, skipna = True)
-minimum_of_Setosa = Iris_setosa.min(axis = 0, skipna = True)
-minimum_of_Versicolor = Iris_versicolor.min(axis = 0, skipna = True)
-minimum_of_Virginica = Iris_virginica.min(axis = 0, skipna = True)
+minimum_of_data = iris.min(axis = 0, skipna = True)
+minimum_of_Setosa = iris_setosa.min(axis = 0, skipna = True)
+minimum_of_Versicolor = iris_versicolor.min(axis = 0, skipna = True)
+minimum_of_Virginica = iris_virginica.min(axis = 0, skipna = True)
 
 
 
@@ -208,10 +203,10 @@ CODE USED TO GET THE AVERAGE SIZE OF ALL IRIS
 import pandas as pd
 
 # Creating the dataframe 
-IrisData = pd.read_csv('IRIScsv.csv')
+iris = pd.read_csv('IRIS.csv')
 
 # sum over the column axis.
-averageofdata = IrisData.mean(axis = 0, skipna = True)
+averageofdata = iris.mean(axis = 0, skipna = True)
 
 print("Average Sizes of All Iris Data")
 print(averageofdata)
@@ -242,13 +237,13 @@ CODE USED TO GET THE AVERAGE SIZE OF SETOSA
 import pandas as pd
 
 # Creating the dataframe 
-IrisData = pd.read_csv('IRIScsv.csv')
+iris = pd.read_csv('IRIS.csv')
 
-#Used for filtering variety column
-Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
+#Used for filtering type column
+iris_setosa = iris.loc[iris['type'] == 'Setosa']
 
 #Used for calculating averages
-average_of_Setosa = Iris_setosa.mean(axis = 0, skipna = True)
+average_of_Setosa = iris_setosa.mean(axis = 0, skipna = True)
 
 print("Average of Setosa")
 print(pd.DataFrame(average_of_Setosa))
@@ -284,10 +279,10 @@ CODE USED TO GET THE MINIMUM SIZE OF ALL IRIS
 import pandas as pd
 
 # Creating the dataframe 
-IrisData = pd.read_csv('IRIScsv.csv')
+iris = pd.read_csv('IRIS.csv')
 
 # sum over the column axis.
-minimum_of_data = IrisData.min(axis = 0, skipna = True)
+minimum_of_data = iris.min(axis = 0, skipna = True)
 
 print("Minimum Sizes of All Iris Data")
 print(minimum_of_data)
@@ -319,13 +314,13 @@ CODE USED TO GET THE MINIMUM SIZE OF SETOSA
 import pandas as pd
 
 # Creating the dataframe 
-IrisData = pd.read_csv('IRIScsv.csv')
+iris = pd.read_csv('IRIS.csv')
 
-#Used for filtering variety column
-Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
+#Used for filtering type column
+iris_setosa = iris.loc[iris['type'] == 'Setosa']
 
 #Used for calculating averages
-minimum_of_Setosa = Iris_setosa.min(axis = 0, skipna = True)
+minimum_of_Setosa = iris_setosa.min(axis = 0, skipna = True)
 
 print("Minimum of Setosa")
 print(pd.DataFrame(minimum_of_Setosa))
@@ -362,10 +357,10 @@ CODE USED TO GET THE MAXIMUM SIZE OF ALL IRIS
 import pandas as pd
 
 # Creating the dataframe 
-IrisData = pd.read_csv('IRIScsv.csv')
+iris = pd.read_csv('IRIS.csv')
 
 # sum over the column axis.
-maximum_of_data = IrisData.max(axis = 0, skipna = True)
+maximum_of_data = iris.max(axis = 0, skipna = True)
 
 print("Maximum Sizes of All Iris Data")
 print(maximum_of_data)
@@ -393,13 +388,13 @@ CODE USED TO GET THE MAXIMUM SIZE OF SETOSA
 import pandas as pd
 
 # Creating the dataframe 
-IrisData = pd.read_csv('IRIScsv.csv')
+iris = pd.read_csv('IRIS.csv')
 
-#Used for filtering variety column
-Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
+#Used for filtering type column
+iris_setosa = iris.loc[iris['type'] == 'Setosa']
 
 #Used for calculating averages
-maximum_of_Setosa = Iris_setosa.max(axis = 0, skipna = True)
+maximum_of_Setosa = iris_setosa.max(axis = 0, skipna = True)
 
 print("Maximum of Setosa")
 print(pd.DataFrame(maximum_of_Setosa))
@@ -481,8 +476,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv("IRIScsv.csv")
-sns.pairplot(df, hue="variety")
+df = pd.read_csv("IRIS.csv")
+sns.pairplot(df, hue="type")
 plt.show()
 
 Source: https://web.microsoftstream.com/video/025ef713-d7c8-492f-97f4-5590015da029
@@ -492,21 +487,89 @@ PRESS KEY TO CONTINUE TO SEE RESULTS OF CODE
 
     pause_or_quit()
     
-    df = pd.read_csv("IRIScsv.csv")
-    sns.pairplot(df, kind='scatter',hue='variety')
+    df = pd.read_csv("IRIS.csv")
+    sns.pairplot(df, kind='scatter',hue='type')
     plt.show()
     
 
 
 def View_Data_As_Scatter_Plot():
+
+
+    #https://seaborn.pydata.org/generated/seaborn.scatterplot.html
+    mydata = pd.read_csv('IRIS.csv')
+
+    #petal_length
+    #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
+    map_img = mpimg.imread('Iris_setosa_image_wikimdia_commons.jpg')
+    ax = sns.scatterplot(x="petal_length", y="petal_width", hue="type", data=mydata)
+    plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
+    plt.show()
+
+
+    ax = sns.scatterplot(x="petal_length", y="sepal_width", hue="type", data=mydata)
+    plt.show()
+
+
+    ax = sns.scatterplot(x="petal_length", y="sepal_length", hue="type", data=mydata)
+    plt.show()
+
+
+    #petal_width
+
+    ax = sns.scatterplot(x="petal_width", y="petal_length", hue="type", data=mydata)
+    plt.show()
+
+
+    ax = sns.scatterplot(x="petal_width", y="sepal_width", hue="type", data=mydata)
+    plt.show()
+
+
+    ax = sns.scatterplot(x="petal_width", y="sepal_length", hue="type", data=mydata)
+    plt.show()
+
+
+    #sepal_length
+
+    ax = sns.scatterplot(x="sepal_length", y="petal_length", hue="type", data=mydata)
+    plt.show()
+
+
+    ax = sns.scatterplot(x="sepal_length", y="petal_width", hue="type", data=mydata)
+    plt.show()
+
+    #Iris_virginica_sepal_wikimdia_commons.jpg
+    #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
+    map_img = mpimg.imread('Iris_virginica_sepal_wikimdia_commons.jpg')
+    ax = sns.scatterplot(x="sepal_length", y="sepal_width", hue="type", data=mydata)
+    plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
+    plt.show()
+
+
+    #sepal_width
+
+    ax = sns.scatterplot(x="sepal_width", y="petal_length", hue="type", data=mydata)
+    plt.show()
+
+
+    ax = sns.scatterplot(x="sepal_width", y="petal_width", hue="type", data=mydata)
+    plt.show()
+
+
+    ax = sns.scatterplot(x="sepal_width", y="sepal_length", hue="type", data=mydata)
+    plt.show()
+
+
+
+    
     print(Fore.GREEN +"""CODE NEEDED TO SAVE SCATTER PLOT
 
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("IRIScsv.csv")
+df = pd.read_csv("IRIS.csv")
 
-plt.scatter(df['sepal.length'], df['sepal.width'])
+plt.scatter(df['sepal_length'], df['sepal_width'])
 plt.title("Sepal length versus sepal width")
 plt.xlabel("Sepal Length")
 plt.ylabel("Sepal Width")
@@ -524,9 +587,9 @@ CODE NEEDED TO DISPLAY SCATTER PLOT
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("IRIScsv.csv")
+df = pd.read_csv("IRIS.csv")
 
-plt.scatter(df['sepal.length'], df['sepal.width'])
+plt.scatter(df['sepal_length'], df['sepal_width'])
 plt.title("Sepal length versus sepal width")
 plt.xlabel("Sepal Length")
 plt.ylabel("Sepal Width")
@@ -537,9 +600,9 @@ plt.show()
 
     pause_or_quit()
 
-    df = pd.read_csv("IRIScsv.csv")
+    df = pd.read_csv("IRIS.csv")
 
-    plt.scatter(df['sepal.length'], df['sepal.width'])
+    plt.scatter(df['sepal_length'], df['sepal_width'])
     plt.title("Sepal length versus sepal width")
     plt.xlabel("Sepal Length")
     plt.ylabel("Sepal Width")
@@ -547,7 +610,7 @@ plt.show()
     plt.clf()
 
 
-    plt.scatter(df['sepal.length'], df['sepal.width'])
+    plt.scatter(df['sepal_length'], df['sepal_width'])
     plt.title("Sepal length versus sepal width")
     plt.xlabel("Sepal Length")
     plt.ylabel("Sepal Width")
@@ -570,17 +633,17 @@ def View_Data_As_Histogram():
     import seaborn as sns
 
     # Creating the dataframe 
-    IrisData = pd.read_csv('IRIScsv.csv')
+    iris = pd.read_csv('IRIS.csv')
 
-    #Used for filtering variety column into the separate varieties of flower
-    Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
-    Iris_versicolor = IrisData.loc[IrisData['variety'] == 'Versicolor']
-    Iris_virginica = IrisData.loc[IrisData['variety'] == 'Virginica']
+    #Used for filtering type column into the separate varieties of flower
+    iris_setosa = iris.loc[iris['type'] == 'Setosa']
+    iris_versicolor = iris.loc[iris['type'] == 'Versicolor']
+    iris_virginica = iris.loc[iris['type'] == 'Virginica']
 
     #Used for filtering the separate varieties of flower and just referencing one column e.g. sepal length or sepal width
-    Setosa_Sepal_Length = Iris_setosa.filter(items=['sepal.length'])
-    Versicolor_Sepal_Length = Iris_versicolor.filter(items=['sepal.length'])
-    Virginica_Sepal_Length = Iris_virginica.filter(items=['sepal.length'])
+    Setosa_Sepal_Length = iris_setosa.filter(items=['sepal_length'])
+    Versicolor_Sepal_Length = iris_versicolor.filter(items=['sepal_length'])
+    Virginica_Sepal_Length = iris_virginica.filter(items=['sepal_length'])
 
 
     #extracting dataset for histogram
@@ -615,17 +678,17 @@ def View_Data_As_Histogram():
     import seaborn as sns
 
     # Creating the dataframe 
-    IrisData = pd.read_csv('IRIScsv.csv')
+    iris = pd.read_csv('IRIS.csv')
 
-    #Used for filtering variety column into the separate varieties of flower
-    Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
-    Iris_versicolor = IrisData.loc[IrisData['variety'] == 'Versicolor']
-    Iris_virginica = IrisData.loc[IrisData['variety'] == 'Virginica']
+    #Used for filtering type column into the separate varieties of flower
+    iris_setosa = iris.loc[iris['type'] == 'Setosa']
+    iris_versicolor = iris.loc[iris['type'] == 'Versicolor']
+    iris_virginica = iris.loc[iris['type'] == 'Virginica']
 
     #Used for filtering the separate varieties of flower and just referencing one column e.g. sepal length or sepal width
-    Setosa_Sepal_Length = Iris_setosa.filter(items=['sepal.length'])
-    Versicolor_Sepal_Length = Iris_versicolor.filter(items=['sepal.length'])
-    Virginica_Sepal_Length = Iris_virginica.filter(items=['sepal.length'])
+    Setosa_Sepal_Length = iris_setosa.filter(items=['sepal_length'])
+    Versicolor_Sepal_Length = iris_versicolor.filter(items=['sepal_length'])
+    Virginica_Sepal_Length = iris_virginica.filter(items=['sepal_length'])
 
 
     #extracting dataset for histogram
@@ -649,7 +712,7 @@ def View_Data_As_Histogram():
     pause_or_quit()
 
 
-    
+      
 
     import numpy as np
     import pandas as pd
@@ -660,17 +723,17 @@ def View_Data_As_Histogram():
     import seaborn as sns
 
     # Creating the dataframe 
-    IrisData = pd.read_csv('IRIScsv.csv')
+    iris = pd.read_csv('IRIS.csv')
 
-    #Used for filtering variety column into the separate varieties of flower
-    Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
-    Iris_versicolor = IrisData.loc[IrisData['variety'] == 'Versicolor']
-    Iris_virginica = IrisData.loc[IrisData['variety'] == 'Virginica']
+    #Used for filtering type column into the separate varieties of flower
+    iris_setosa = iris.loc[iris['type'] == 'Setosa']
+    iris_versicolor = iris.loc[iris['type'] == 'Versicolor']
+    iris_virginica = iris.loc[iris['type'] == 'Virginica']
 
     #Used for filtering the separate varieties of flower and just referencing one column e.g. sepal length or sepal width
-    Setosa_Sepal_Length = Iris_setosa.filter(items=['sepal.length'])
-    Versicolor_Sepal_Length = Iris_versicolor.filter(items=['sepal.length'])
-    Virginica_Sepal_Length = Iris_virginica.filter(items=['sepal.length'])
+    Setosa_Sepal_Length = iris_setosa.filter(items=['sepal_length'])
+    Versicolor_Sepal_Length = iris_versicolor.filter(items=['sepal_length'])
+    Virginica_Sepal_Length = iris_virginica.filter(items=['sepal_length'])
 
 
     #extracting dataset for histogram
@@ -702,17 +765,17 @@ def View_Data_As_Histogram():
     import seaborn as sns
 
     # Creating the dataframe 
-    IrisData = pd.read_csv('IRIScsv.csv')
+    iris = pd.read_csv('IRIS.csv')
 
-    #Used for filtering variety column into the separate varieties of flower
-    Iris_setosa = IrisData.loc[IrisData['variety'] == 'Setosa']
-    Iris_versicolor = IrisData.loc[IrisData['variety'] == 'Versicolor']
-    Iris_virginica = IrisData.loc[IrisData['variety'] == 'Virginica']
+    #Used for filtering type column into the separate varieties of flower
+    iris_setosa = iris.loc[iris['type'] == 'Setosa']
+    iris_versicolor = iris.loc[iris['type'] == 'Versicolor']
+    iris_virginica = iris.loc[iris['type'] == 'Virginica']
 
     #Used for filtering the separate varieties of flower and just referencing one column e.g. sepal length or sepal width
-    Setosa_Sepal_Length = Iris_setosa.filter(items=['sepal.length'])
-    Versicolor_Sepal_Length = Iris_versicolor.filter(items=['sepal.length'])
-    Virginica_Sepal_Length = Iris_virginica.filter(items=['sepal.length'])
+    Setosa_Sepal_Length = iris_setosa.filter(items=['sepal_length'])
+    Versicolor_Sepal_Length = iris_versicolor.filter(items=['sepal_length'])
+    Virginica_Sepal_Length = iris_virginica.filter(items=['sepal_length'])
 
 
     #extracting dataset for histogram
@@ -732,6 +795,25 @@ def View_Data_As_Histogram():
     plt.title("Sepal Length Comparison")
     plt.show()
 
+
+
+
+    #Code below is from https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
+    #I had to rename size to height in code below, The height parameter is available in seaborn 0.9.0., In seaborn 0.8.1 (or lower) this parameter was named size.
+    #https://stackoverflow.com/questions/51400076/change-seaborn-pair-plot-figure-size
+    
+    sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"petal_length").add_legend()
+    sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"petal_width").add_legend()
+    sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"sepal_length").add_legend()
+    sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"sepal_width").add_legend()
+    plt.show()
+
+
+
+    """
+ax = sns.scatterplot(x="total_bill", y="tip", hue="time",
+                     data=tips)
+    """
 
 def display_menu():
     print(Fore.WHITE +"Iris Data Set")
