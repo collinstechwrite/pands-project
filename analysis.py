@@ -184,10 +184,15 @@ Press key to see image load.
 
     pause_or_quit() 
 
-    image = Image.open('iris-species.png')
-    image.show()
+    #built in error handling incase image isn't in folder
+    
+    try:
+        image = Image.open('iris-species.png')
+        image.show()
+    except:
+        print("iris-species.png not found in folder: " + os.getcwd())
 
-
+    pause_or_quit()
 
 """SETTING DATA VARIABLES -------------------------------------------------------------------------------------------"""
 # Creating the dataframe 
@@ -325,8 +330,6 @@ RESULTS OF CODE
 
 
 
-
-  
     print(Fore.WHITE + "Minium Sizes of All Iris Data")
     print(pd.DataFrame(minimum_of_data))
     pause_or_quit()
@@ -398,7 +401,6 @@ RESULTS OF CODE
 """)
 
    
-
     # sum over the column axis.
     
     print(Fore.WHITE + "Maximum Sizes of All Iris Data")
@@ -453,36 +455,31 @@ def View_Maximum_Sizes_Virginica():
         
 
 def Save_Summary_Of_Average_Iris_Sizes_To_Text_File():
-    print("Save Summary Of Average Iris Sizes To Text File")
 
-    myfile = input("Write a file name ending with .txt , this is where average, minimum, maximum data summarys will be saved  ...")
-    fileforappending = open(myfile, "w")
-    print(myfile + " has been created")
+    myfile = input("Write a file name ending with .txt, \nthis is where average, minimum, maximum data summarys will be saved:")
+    fileforappending = open("Average_Minimum_Maximum.txt", "w")
     fileforappending.close()
-    print(myfile + " has been created and is ready for appending data.")
-    print("You will find your file here: ", os.getcwd(), "\\" , myfile)
+    
+    print("You will find your file here: ", os.getcwd()+ "\\" + "Average_Minimum_Maximum.txt") #use os.getcwd() to show user current working directory
 
     print("Average Of All Iris", file=open(myfile, 'a'))
     print(pd.DataFrame(average_of_data), file=open(myfile, 'a'))
-    print("Average Of Setosa", file=open(myfile, 'a'))
+    print("\n \nAverage Of Setosa", file=open(myfile, 'a'))
     print(pd.DataFrame(average_of_Setosa), file=open(myfile, 'a'))
-    print("Average Of Versicolor", file=open(myfile, 'a'))
+    print("\n \nAverage Of Versicolor", file=open(myfile, 'a'))
     print(pd.DataFrame(average_of_Versicolor), file=open(myfile, 'a'))
-    print("Average Of Virginica", file=open(myfile, 'a'))    
+    print("\n \nAverage Of Virginica", file=open(myfile, 'a'))    
     print(pd.DataFrame(average_of_Virginica), file=open(myfile, 'a'))
 
 
-
-
-    print("Minimum Of All Iris", file=open(myfile, 'a'))
+    print("\n \nMinimum Of All Iris", file=open(myfile, 'a'))
     print(pd.DataFrame(minimum_of_data), file=open(myfile, 'a'))
-    print("Minimum Of Setosa", file=open(myfile, 'a'))
+    print("\n \nMinimum Of Setosa", file=open(myfile, 'a'))
     print(pd.DataFrame(minimum_of_Setosa), file=open(myfile, 'a'))
-    print("Minimum Of Versicolor", file=open(myfile, 'a'))
+    print("\n \nMinimum Of Versicolor", file=open(myfile, 'a'))
     print(pd.DataFrame(minimum_of_Versicolor), file=open(myfile, 'a'))
-    print("Minimum Of Virginica", file=open(myfile, 'a'))
+    print("\n \nMinimum Of Virginica", file=open(myfile, 'a'))
     print(pd.DataFrame(minimum_of_Virginica), file=open(myfile, 'a'))
-
 
 
     print("Maximum Of All Iris", file=open(myfile, 'a'))
@@ -546,38 +543,68 @@ PRESS KEY TO SAVE
     print("You will find your file here: ", os.getcwd(), "\\" + "Paired Graph Plots.png")
 
 def generate_scatter_plot(x_axis,y_axis):
-    #DISPLAYING THE SCATTER GRAPH FILES
-    
-    #https://seaborn.pydata.org/generated/seaborn.scatterplot.html
-    mydata = pd.read_csv('IRIS.csv')
 
-    #petal_length
-    #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
-    map_img = mpimg.imread('Iris_setosa_image_wikimdia_commons.jpg')
-    ax = sns.scatterplot(x=x_axis, y=y_axis, hue="type", data=mydata)
-    plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
-    plt.title(x_axis + " & " + y_axis + " Comparison cm")
-    plt.show()    
+    #built in error handling incase image Iris_setosa_image_wikimdia_commons.jpg isn't in folder
+    try:
+        #DISPLAYING THE SCATTER GRAPH FILES WITH BACKGROUND IMAGE
+        
+        #https://seaborn.pydata.org/generated/seaborn.scatterplot.html
+        mydata = pd.read_csv('IRIS.csv')
+
+        #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
+        map_img = mpimg.imread('Iris_setosa_image_wikimdia_commons.jpg')
+        ax = sns.scatterplot(x=x_axis, y=y_axis, hue="type", data=mydata)
+        plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
+        plt.title(x_axis + " & " + y_axis + " Comparison cm")
+        plt.show()    
+    except:
+        #DISPLAYING THE SCATTER GRAPH FILES WITHOUT BACKGROUND IMAGE
+        
+        #https://seaborn.pydata.org/generated/seaborn.scatterplot.html
+        mydata = pd.read_csv('IRIS.csv')
+
+
+        #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
+        ax = sns.scatterplot(x=x_axis, y=y_axis, hue="type", data=mydata)
+        plt.title(x_axis + " & " + y_axis + " Comparison cm")
+        plt.show() 
 
 
 def save_scatter_plot(x_axis,y_axis):
-    #SAVING THE SCATTER GRAPH FILES
 
-    #https://seaborn.pydata.org/generated/seaborn.scatterplot.html
-    mydata = pd.read_csv('IRIS.csv')
+    try:
+        #SAVING THE SCATTER GRAPH FILES WITH BACKGROUND IMAGE
 
-    #petal_length
-    #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
-    map_img = mpimg.imread('Iris_setosa_image_wikimdia_commons.jpg')
-    ax = sns.scatterplot(x=x_axis, y=y_axis, hue="type", data=mydata)
-    plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
-    plt.title(x_axis + " & " + y_axis + " Comparison cm")
-    plt.savefig(x_axis + " & " + y_axis + " Comparison.png")
-    plt.clf()
-    print("You will find your file here: ", os.getcwd()+ "\\" + x_axis + " & " + y_axis + " Comparison.png")
+        #https://seaborn.pydata.org/generated/seaborn.scatterplot.html
+        mydata = pd.read_csv('IRIS.csv')
+
+
+        #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
+        map_img = mpimg.imread('Iris_setosa_image_wikimdia_commons.jpg')
+        ax = sns.scatterplot(x=x_axis, y=y_axis, hue="type", data=mydata)
+        plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
+        plt.title(x_axis + " & " + y_axis + " Comparison cm")
+        plt.savefig(x_axis + " & " + y_axis + " Comparison.png")
+        plt.clf()
+        print("You will find your file here: ", os.getcwd()+ "\\" + x_axis + " & " + y_axis + " Comparison.png")
+
+    except:
+        #SAVING THE SCATTER GRAPH FILES WITHOUT BACKGROUND IMAGE
+
+        #https://seaborn.pydata.org/generated/seaborn.scatterplot.html
+        mydata = pd.read_csv('IRIS.csv')
+
+
+        #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
+        ax = sns.scatterplot(x=x_axis, y=y_axis, hue="type", data=mydata)
+        plt.title(x_axis + " & " + y_axis + " Comparison cm")
+        plt.savefig(x_axis + " & " + y_axis + " Comparison.png")
+        plt.clf()
+        print("You will find your file here: ", os.getcwd()+ "\\" + x_axis + " & " + y_axis + " Comparison.png")
+
 
 def View_Data_As_Scatter_Plot():
-
+    print("Close the graph to move to next")
     #petal_length
     generate_scatter_plot("petal_length","petal_width")
     generate_scatter_plot("petal_length","sepal_width")
@@ -597,7 +624,6 @@ def View_Data_As_Scatter_Plot():
     generate_scatter_plot("sepal_width","petal_length")
     generate_scatter_plot("sepal_width","petal_width")
     generate_scatter_plot("sepal_width","sepal_length")
-
 
 
 def Save_Data_As_Scatter_Plot():
@@ -621,11 +647,9 @@ def Save_Data_As_Scatter_Plot():
     save_scatter_plot("sepal_width","petal_width")
     save_scatter_plot("sepal_width","sepal_length")
 
-
 def View_Data_As_Histogram():
 
     pause_or_quit()
-
 
     """--------------------------------------------------------------------------------"""
 
@@ -661,8 +685,6 @@ def View_Data_As_Histogram():
     plt.show()
 
     pause_or_quit()
-
-
 
 
 def Save_Data_As_Histogram():
