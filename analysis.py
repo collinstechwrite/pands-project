@@ -6,13 +6,16 @@ Author Christopher Collins
 import pandas as pd
 import seaborn as sns
 import numpy as np
-from numpy.random import randn
-from scipy import stats
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from colorama import init, Fore, Back, Style
 from PIL import Image
 import matplotlib.image as mpimg 
+#for handling keyboard reactions and pausing
+import keyboard  # using module keyboard
+import os
+
+
 
 # Creating the dataframe 
 iris = pd.read_csv('IRIS.csv')
@@ -45,9 +48,7 @@ minimum_of_Versicolor = iris_versicolor.min(axis = 0, skipna = True)
 minimum_of_Virginica = iris_virginica.min(axis = 0, skipna = True)
 
 
-#for handling keyboard reactions and pausing
-import keyboard  # using module keyboard
-import os
+
 
 def clear_screen():
     os.system("cls")
@@ -59,6 +60,7 @@ def main():
     array = []
 
     display_menu()
+
 
 
     while True:
@@ -98,7 +100,7 @@ def main():
             display_menu()
         elif (choice == "7"):
             clear_screen()
-            View_Data_As_Graph()
+            View_Paired_Graph_Plots()
             display_menu()
         elif (choice == "8"):
             clear_screen()
@@ -109,10 +111,49 @@ def main():
             View_Data_As_Histogram()
             display_menu()
 
+        elif (choice == "10"):
+            clear_screen()
+            Save_Paired_Graph_Plots()
+            display_menu()
+            
+        elif (choice == "11"):
+            clear_screen()
+            Save_Data_As_Scatter_Plot()
+            display_menu()            
+
+        elif (choice == "12"):
+            clear_screen()
+            Save_Data_As_Histogram()
+            display_menu()
         elif (choice == "x"):
             break;
         else:
             display_menu()
+
+
+def display_menu():
+    print(Fore.WHITE +"Iris Data Set")
+    print("--------")
+    print("MENU")
+    print("====")
+    print("1 – Introduction To Iris Data Set")
+    print("2 - View Image Of Iris Varieties")
+    print("-----------------------------------")
+    print("3 – View Average Sizes Iris")
+    print("4 – View Minimum Sizes Iris")
+    print("5 – View Maximum Sizes Iris")
+    print("-----------------------------------")
+    print("6 – Save Summary Data To Text File")
+    print("-----------------------------------")
+    print("7 – View Paired Graph Plots")
+    print("8 – View Scatter Plots")
+    print("9 – View Histograms")
+    print("-----------------------------------")
+    print("10 – Save Paired Graph Plots")   
+    print("11 – Save Scatter Plots")   
+    print("12 – Save Histograms")
+    print("-----------------------------------")
+    print("x – Exit application")
 
 
 def pause_or_quit(): #used for handling scrolling through the program
@@ -454,7 +495,7 @@ def Save_Summary_Of_Average_Iris_Sizes_To_Text_File():
     print(pd.DataFrame(maximum_of_Virginica), file=open(myfile, 'a'))
 
 
-def View_Data_As_Graph():
+def View_Paired_Graph_Plots():
 
     print(Fore.GREEN +"""CODE USED TO GET GRAPH PAIRS OF ALL IRIS DATA
 
@@ -477,11 +518,50 @@ PRESS KEY TO CONTINUE TO SEE RESULTS OF CODE
     df = pd.read_csv("IRIS.csv")
     sns.pairplot(df, kind='scatter',hue='type')
     plt.show()
+
+def Save_Paired_Graph_Plots():
+
+    print(Fore.GREEN +"""CODE USED TO GET GRAPH PAIRS OF ALL IRIS DATA
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("IRIS.csv")
+sns.pairplot(df, hue="type")
+plt.savefig("Paired Graph Plots.png")
+plt.clf()
+
+
+PRESS KEY TO SAVE
+""")
+
+    pause_or_quit()
     
+    df = pd.read_csv("IRIS.csv")
+    sns.pairplot(df, kind='scatter',hue='type')
+    plt.savefig("Paired Graph Plots.png")
+    plt.clf()
+    print("You will find your file here: ", os.getcwd(), "\\" + "Paired Graph Plots.png")
+
+def generate_scatter_plot(x_axis,y_axis):
+    #DISPLAYING THE SCATTER GRAPH FILES
+    
+    #https://seaborn.pydata.org/generated/seaborn.scatterplot.html
+    mydata = pd.read_csv('IRIS.csv')
+
+    #petal_length
+    #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
+    map_img = mpimg.imread('Iris_setosa_image_wikimdia_commons.jpg')
+    ax = sns.scatterplot(x=x_axis, y=y_axis, hue="type", data=mydata)
+    plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
+    plt.title(x_axis + " & " + y_axis + " Comparison cm")
+    plt.show()    
 
 
-def View_Data_As_Scatter_Plot():
-
+def save_scatter_plot(x_axis,y_axis):
+    #SAVING THE SCATTER GRAPH FILES
 
     #https://seaborn.pydata.org/generated/seaborn.scatterplot.html
     mydata = pd.read_csv('IRIS.csv')
@@ -489,432 +569,130 @@ def View_Data_As_Scatter_Plot():
     #petal_length
     #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
     map_img = mpimg.imread('Iris_setosa_image_wikimdia_commons.jpg')
-    ax = sns.scatterplot(x="petal_length", y="petal_width", hue="type", data=mydata)
+    ax = sns.scatterplot(x=x_axis, y=y_axis, hue="type", data=mydata)
     plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
-    plt.title("Petal Length & Petal Width Comparison cm")
-    plt.show()
+    plt.title(x_axis + " & " + y_axis + " Comparison cm")
+    plt.savefig(x_axis + " & " + y_axis + " Comparison.png")
+    plt.clf()
+    print("You will find your file here: ", os.getcwd()+ "\\" + x_axis + " & " + y_axis + " Comparison.png")
 
-
-    ax = sns.scatterplot(x="petal_length", y="sepal_width", hue="type", data=mydata)
-    plt.title("Petal Length & Sepal Width Comparison cm")
-    plt.show()
-
-
-    ax = sns.scatterplot(x="petal_length", y="sepal_length", hue="type", data=mydata)
-    plt.title("Petal Length & Sepal Width Comparison cm")
-    plt.show()
-
-
-    #petal_width
-
-    ax = sns.scatterplot(x="petal_width", y="petal_length", hue="type", data=mydata)
-    plt.title("Petal Width & Petal Length Comparison cm")
-    plt.show()
-
-
-    ax = sns.scatterplot(x="petal_width", y="sepal_width", hue="type", data=mydata)
-    plt.title("Petal Width & Sepal Width Comparison cm")
-    plt.show()
-
-
-    ax = sns.scatterplot(x="petal_width", y="sepal_length", hue="type", data=mydata)
-    plt.title("Petal Width & Sepal Length Comparison cm")
-    plt.show()
-
-
-    #sepal_length
-
-    ax = sns.scatterplot(x="sepal_length", y="petal_length", hue="type", data=mydata)
-    plt.title("Sepal Length & Petal Length Comparison cm")
-    plt.show()
-
-
-    ax = sns.scatterplot(x="sepal_length", y="petal_width", hue="type", data=mydata)
-    plt.title("Sepal Length & Petal Width Comparison cm")
-    plt.show()
-
-    #Iris_virginica_sepal_wikimdia_commons.jpg
-    #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
-    map_img = mpimg.imread('Iris_virginica_sepal_wikimdia_commons.jpg')
-    ax = sns.scatterplot(x="sepal_length", y="sepal_width", hue="type", data=mydata)
-    plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
-    plt.title("Sepal Length & Sepal Width Comparison cm")
-    plt.show()
-
-
-    #sepal_width
-
-    ax = sns.scatterplot(x="sepal_width", y="petal_length", hue="type", data=mydata)
-    plt.title("Sepal Width & Petal Length Comparison cm")
-    plt.show()
-
-
-    ax = sns.scatterplot(x="sepal_width", y="petal_width", hue="type", data=mydata)
-    plt.title("Sepal Width & Petal Width Comparison cm")
-    plt.show()
-
-
-    ax = sns.scatterplot(x="sepal_width", y="sepal_length", hue="type", data=mydata)
-    plt.title("Sepal Width & Sepal Length Comparison cm")
-    plt.show()
-
-
-    """--------------------------------------------------------------------------"""
-    #SAVING THE SCATTER GRAPH FILES
+def View_Data_As_Scatter_Plot():
 
     #petal_length
-    #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
-    map_img = mpimg.imread('Iris_setosa_image_wikimdia_commons.jpg')
-    ax = sns.scatterplot(x="petal_length", y="petal_width", hue="type", data=mydata)
-    plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
-    plt.title("Petal Length & Petal Width Comparison cm")
-    plt.savefig("Petal Length & Petal Width Comparison.png")
-    plt.clf()
-
-
-    ax = sns.scatterplot(x="petal_length", y="sepal_width", hue="type", data=mydata)
-    plt.title("Petal Length & Sepal Width Comparison cm")
-    plt.savefig("Petal Length & Sepal Width Comparison.png")
-    plt.clf()
-
-
-    ax = sns.scatterplot(x="petal_length", y="sepal_length", hue="type", data=mydata)
-    plt.title("Petal Length & Sepal Width Comparison cm")
-    plt.savefig("Petal Length & Sepal Width Comparison.png")
-    plt.clf()
-
+    generate_scatter_plot("petal_length","petal_width")
+    generate_scatter_plot("petal_length","sepal_width")
+    generate_scatter_plot("petal_length","sepal_length")
 
     #petal_width
-
-    ax = sns.scatterplot(x="petal_width", y="petal_length", hue="type", data=mydata)
-    plt.title("Petal Width & Petal Length Comparison cm")
-    plt.savefig("Petal Width & Petal Length Comparison.png")
-    plt.clf()
-
-
-    ax = sns.scatterplot(x="petal_width", y="sepal_width", hue="type", data=mydata)
-    plt.title("Petal Width & Sepal Width Comparison cm")
-    plt.savefig("Petal Width & Sepal Width Comparison.png")
-    plt.clf()
-
-
-    ax = sns.scatterplot(x="petal_width", y="sepal_length", hue="type", data=mydata)
-    plt.title("Petal Width & Sepal Length Comparison cm")
-    plt.savefig("Petal Width & Sepal Length Comparison.png")
-    plt.clf()
-
+    generate_scatter_plot("petal_width","petal_length")
+    generate_scatter_plot("petal_width","sepal_width")
+    generate_scatter_plot("petal_width","sepal_length")
 
     #sepal_length
-
-    ax = sns.scatterplot(x="sepal_length", y="petal_length", hue="type", data=mydata)
-    plt.title("Sepal Length & Petal Length Comparison cm")
-    plt.savefig("Sepal Length & Petal Length Comparison.png")
-    plt.clf()
-
-
-    ax = sns.scatterplot(x="sepal_length", y="petal_width", hue="type", data=mydata)
-    plt.title("Sepal Length & Petal Width Comparison cm")
-    plt.savefig("Sepal Length & Petal Width Comparison.png")
-    plt.clf()
-
-    #Iris_virginica_sepal_wikimdia_commons.jpg
-    #https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
-    map_img = mpimg.imread('Iris_virginica_sepal_wikimdia_commons.jpg')
-    ax = sns.scatterplot(x="sepal_length", y="sepal_width", hue="type", data=mydata)
-    plt.imshow(map_img, zorder=0, extent=[0.5, 8.0, 1.0, 7.0])
-    plt.title("Sepal Length & Sepal Width Comparison cm")
-    plt.savefig("Sepal Length & Sepal Width Comparison.png")
-    plt.clf()
-
+    generate_scatter_plot("sepal_length","petal_length")
+    generate_scatter_plot("sepal_length","petal_width")
+    generate_scatter_plot("sepal_length","petal_width")
 
     #sepal_width
-
-    ax = sns.scatterplot(x="sepal_width", y="petal_length", hue="type", data=mydata)
-    plt.title("Sepal Width & Petal Length Comparison cm")
-    plt.savefig("Sepal Width & Petal Length Comparison.png")
-    plt.clf()
-
-
-    ax = sns.scatterplot(x="sepal_width", y="petal_width", hue="type", data=mydata)
-    plt.title("Sepal Width & Petal Width Comparison cm")
-    plt.savefig("Sepal Width & Petal Width Comparison.png")
-    plt.clf()
-
-
-    ax = sns.scatterplot(x="sepal_width", y="sepal_length", hue="type", data=mydata)
-    plt.title("Sepal Width & Sepal Length Comparison cm")
-    plt.savefig("Sepal Width & Sepal Length Comparison.png")
-    plt.clf()
-
-    
-    print(Fore.GREEN +"""CODE NEEDED TO SAVE SCATTER PLOT
-
-import pandas as pd
-import matplotlib.pyplot as plt
-
-df = pd.read_csv("IRIS.csv")
-
-plt.scatter(df['sepal_length'], df['sepal_width'])
-plt.title("Sepal length versus sepal width")
-plt.xlabel("Sepal Length")
-plt.ylabel("Sepal Width")
-plt.savefig("scatter.png")
-plt.clf()""")
-
-
-    pause_or_quit()
+    generate_scatter_plot("sepal_width","petal_length")
+    generate_scatter_plot("sepal_width","petal_width")
+    generate_scatter_plot("sepal_width","sepal_length")
 
 
 
-    print(Fore.GREEN +"""
-CODE NEEDED TO DISPLAY SCATTER PLOT
+def Save_Data_As_Scatter_Plot():
+    #petal_length
+    save_scatter_plot("petal_length","petal_width")
+    save_scatter_plot("petal_length","sepal_width")
+    save_scatter_plot("petal_length","sepal_length")
 
-import pandas as pd
-import matplotlib.pyplot as plt
+    #petal_width
+    save_scatter_plot("petal_width","petal_length")
+    save_scatter_plot("petal_width","sepal_width")
+    save_scatter_plot("petal_width","sepal_length")
 
-df = pd.read_csv("IRIS.csv")
+    #sepal_length
+    save_scatter_plot("sepal_length","petal_length")
+    save_scatter_plot("sepal_length","petal_width")
+    save_scatter_plot("sepal_length","petal_width")
 
-plt.scatter(df['sepal_length'], df['sepal_width'])
-plt.title("Sepal length versus sepal width")
-plt.xlabel("Sepal Length")
-plt.ylabel("Sepal Width")
-plt.show()
-
-
-""")
-
-    pause_or_quit()
-
-    df = pd.read_csv("IRIS.csv")
-
-    plt.scatter(df['sepal_length'], df['sepal_width'])
-    plt.title("Sepal length versus sepal width")
-    plt.xlabel("Sepal Length")
-    plt.ylabel("Sepal Width")
-    plt.savefig("scatter.png")
-    plt.clf()
-
-
-    plt.scatter(df['sepal_length'], df['sepal_width'])
-    plt.title("Sepal length versus sepal width")
-    plt.xlabel("Sepal Length")
-    plt.ylabel("Sepal Width")
-    plt.show()
-
-
+    #sepal_width
+    save_scatter_plot("sepal_width","petal_length")
+    save_scatter_plot("sepal_width","petal_width")
+    save_scatter_plot("sepal_width","sepal_length")
 
 
 def View_Data_As_Histogram():
 
-    print(Fore.GREEN +"""
-    CODE NEEDED TO DISPLAY HISTOGRAM
-
-    import numpy as np
-    import pandas as pd
-    from numpy.random import randn
-    from scipy import stats
-    import matplotlib as mpl
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-
-    # Creating the dataframe 
-    iris = pd.read_csv('IRIS.csv')
-
-    #Used for filtering type column into the separate varieties of flower
-    iris_setosa = iris.loc[iris['type'] == 'Setosa']
-    iris_versicolor = iris.loc[iris['type'] == 'Versicolor']
-    iris_virginica = iris.loc[iris['type'] == 'Virginica']
-
-    #Used for filtering the separate varieties of flower and just referencing one column e.g. sepal length or sepal width
-    Setosa_Sepal_Length = iris_setosa.filter(items=['sepal_length'])
-    Versicolor_Sepal_Length = iris_versicolor.filter(items=['sepal_length'])
-    Virginica_Sepal_Length = iris_virginica.filter(items=['sepal_length'])
-
-
-    #extracting dataset for histogram
-    dataset1 = pd.DataFrame(Setosa_Sepal_Length)
-    dataset2 = pd.DataFrame(Versicolor_Sepal_Length)
-    dataset3 = pd.DataFrame(Virginica_Sepal_Length)
-
-    #converts the dataframes to arrays to be used in histogram
-    dataset1 = dataset1.to_numpy()
-    dataset2 = dataset2.to_numpy()
-    dataset3 = dataset3.to_numpy()
-
-    plt.hist(dataset1, color='blue', label='Setosa', alpha=0.5,bins=50, )
-    plt.hist(dataset2, color='orange', label='Versicolor', alpha=0.5,bins=50)
-    plt.hist(dataset3, color='green',label='Virginica', alpha=0.5,bins=50)
-    plt.xlabel('Size cm')
-    plt.title("Sepal Length Comparison cm")
-    plt.show()
-""")
-
-    pause_or_quit()
-
-    print(Fore.GREEN +"""
-    CODE NEEDED TO SAVE HISTOGRAM
-
-    import numpy as np
-    import pandas as pd
-    from numpy.random import randn
-    from scipy import stats
-    import matplotlib as mpl
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-
-    # Creating the dataframe 
-    iris = pd.read_csv('IRIS.csv')
-
-    #Used for filtering type column into the separate varieties of flower
-    iris_setosa = iris.loc[iris['type'] == 'Setosa']
-    iris_versicolor = iris.loc[iris['type'] == 'Versicolor']
-    iris_virginica = iris.loc[iris['type'] == 'Virginica']
-
-    #Used for filtering the separate varieties of flower and just referencing one column e.g. sepal length or sepal width
-    Setosa_Sepal_Length = iris_setosa.filter(items=['sepal_length'])
-    Versicolor_Sepal_Length = iris_versicolor.filter(items=['sepal_length'])
-    Virginica_Sepal_Length = iris_virginica.filter(items=['sepal_length'])
-
-
-    #extracting dataset for histogram
-    dataset1 = pd.DataFrame(Setosa_Sepal_Length)
-    dataset2 = pd.DataFrame(Versicolor_Sepal_Length)
-    dataset3 = pd.DataFrame(Virginica_Sepal_Length)
-
-    #converts the dataframes to arrays to be used in histogram
-    dataset1 = dataset1.to_numpy()
-    dataset2 = dataset2.to_numpy()
-    dataset3 = dataset3.to_numpy()
-
-    plt.hist(dataset1, color='blue', label='Setosa', alpha=0.5,bins=50, )
-    plt.hist(dataset2, color='orange', label='Versicolor', alpha=0.5,bins=50)
-    plt.hist(dataset3, color='green',label='Virginica', alpha=0.5,bins=50)
-    plt.xlabel('Size cm')
-    plt.title("Sepal Length Comparison cm")
-    plt.savefig("histogram.png")
-    plt.clf()""")
-
     pause_or_quit()
 
 
-      
+    """--------------------------------------------------------------------------------"""
 
     import numpy as np
     import pandas as pd
-    from numpy.random import randn
-    from scipy import stats
     import matplotlib as mpl
     import matplotlib.pyplot as plt
     import seaborn as sns
 
     # Creating the dataframe 
     iris = pd.read_csv('IRIS.csv')
-
-    #Used for filtering type column into the separate varieties of flower
-    iris_setosa = iris.loc[iris['type'] == 'Setosa']
-    iris_versicolor = iris.loc[iris['type'] == 'Versicolor']
-    iris_virginica = iris.loc[iris['type'] == 'Virginica']
-
-    #Used for filtering the separate varieties of flower and just referencing one column e.g. sepal length or sepal width
-    Setosa_Sepal_Length = iris_setosa.filter(items=['sepal_length'])
-    Versicolor_Sepal_Length = iris_versicolor.filter(items=['sepal_length'])
-    Virginica_Sepal_Length = iris_virginica.filter(items=['sepal_length'])
-
-
-    #extracting dataset for histogram
-    dataset1 = pd.DataFrame(Setosa_Sepal_Length)
-    dataset2 = pd.DataFrame(Versicolor_Sepal_Length)
-    dataset3 = pd.DataFrame(Virginica_Sepal_Length)
-
-    #converts the dataframes to arrays to be used in histogram
-    dataset1 = dataset1.to_numpy()
-    dataset2 = dataset2.to_numpy()
-    dataset3 = dataset3.to_numpy()
-
-    plt.hist(dataset1, color='blue', label='Setosa', alpha=0.5,bins=50, )
-    plt.hist(dataset2, color='orange', label='Versicolor', alpha=0.5,bins=50)
-    plt.hist(dataset3, color='green',label='Virginica', alpha=0.5,bins=50)
-    plt.xlabel('Size cm')
-    plt.title("Sepal Length Comparison cm")
-    plt.savefig("histogram.png")
-    plt.clf()
-
-    
-
-    import numpy as np
-    import pandas as pd
-    from numpy.random import randn
-    from scipy import stats
-    import matplotlib as mpl
-    import matplotlib.pyplot as plt
-    import seaborn as sns
-
-    # Creating the dataframe 
-    iris = pd.read_csv('IRIS.csv')
-
-    #Used for filtering type column into the separate varieties of flower
-    iris_setosa = iris.loc[iris['type'] == 'Setosa']
-    iris_versicolor = iris.loc[iris['type'] == 'Versicolor']
-    iris_virginica = iris.loc[iris['type'] == 'Virginica']
-
-    #Used for filtering the separate varieties of flower and just referencing one column e.g. sepal length or sepal width
-    Setosa_Sepal_Length = iris_setosa.filter(items=['sepal_length'])
-    Versicolor_Sepal_Length = iris_versicolor.filter(items=['sepal_length'])
-    Virginica_Sepal_Length = iris_virginica.filter(items=['sepal_length'])
-
-
-    #extracting dataset for histogram
-    dataset1 = pd.DataFrame(Setosa_Sepal_Length)
-    dataset2 = pd.DataFrame(Versicolor_Sepal_Length)
-    dataset3 = pd.DataFrame(Virginica_Sepal_Length)
-
-    #converts the dataframes to arrays to be used in histogram
-    dataset1 = dataset1.to_numpy()
-    dataset2 = dataset2.to_numpy()
-    dataset3 = dataset3.to_numpy()
-
-    plt.hist(dataset1, color='blue', label='Setosa', alpha=0.5,bins=50, )
-    plt.hist(dataset2, color='orange', label='Versicolor', alpha=0.5,bins=50)
-    plt.hist(dataset3, color='green',label='Virginica', alpha=0.5,bins=50)
-    plt.xlabel('Size cm')
-    plt.title("Sepal Length Comparison cm")
-    plt.show()
-
-
-
 
     #Code below is from https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
     #I had to rename size to height in code below, The height parameter is available in seaborn 0.9.0., In seaborn 0.8.1 (or lower) this parameter was named size.
     #https://stackoverflow.com/questions/51400076/change-seaborn-pair-plot-figure-size
-    
+
+
+    #code used to display graphs
     sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"petal_length").add_legend()
+    plt.title("Petal Length Comparison cm")
+    plt.show()   
+
     sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"petal_width").add_legend()
-    sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"sepal_length").add_legend()
-    sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"sepal_width").add_legend()
+    plt.title("Petal Width Comparison cm")
     plt.show()
 
+    sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"sepal_length").add_legend()
+    plt.title("Sepal Length Comparison cm")
+    plt.show()
+    
+    sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"sepal_width").add_legend()
+    plt.title("Sepal Width Comparison cm")
+    plt.show()
+
+    pause_or_quit()
 
 
-    """
-ax = sns.scatterplot(x="total_bill", y="tip", hue="time",
-                     data=tips)
-    """
 
-def display_menu():
-    print(Fore.WHITE +"Iris Data Set")
-    print("--------")
-    print("MENU")
-    print("====")
-    print("1 – Introduction To Iris Data Set")
-    print("2 - View Image Of Iris Varieties")
-    print("3 – View Average Sizes Iris")
-    print("4 – View Minimum Sizes Iris")
-    print("5 – View Maximum Sizes Iris")
-    print("6 – Save Summary Data To Text File")
-    print("7 – View Data As Paired Graph Plots")
-    print("8 – Save Data As Scatter Plot")
-    print("9 – Save Data As Histogram")
-    print("x – Exit application")
+
+def Save_Data_As_Histogram():
+    #code used to save graphs
+    sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"petal_length").add_legend()
+    plt.title("Petal Length Comparison cm")
+    plt.savefig("Histogram Petal Length Comparison cm.png")
+    plt.clf()  
+    print("You will find your file here: "+ os.getcwd()+ "\\" + "Histogram Petal Length Comparison cm.png")
+
+
+    sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"petal_width").add_legend()
+    plt.title("Petal Width Comparison cm")
+    plt.savefig("Histogram Petal Width Comparison cm.png")
+    plt.clf()
+    print("You will find your file here: "+ os.getcwd()+ "\\" + "Histogram Petal Width Comparison cm.png")
+
+    sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"sepal_length").add_legend()
+    plt.title("Sepal Length Comparison cm")
+    plt.savefig("Histogram Sepal Length Comparison cm.png")
+    plt.clf()
+    print("You will find your file here: "+ os.getcwd()+ "\\" + "Histogram Sepal Length Comparison cm.png")
+
+    
+    sns.FacetGrid(iris,hue="type",height=3).map(sns.distplot,"sepal_width").add_legend()
+    plt.title("Sepal Width Comparison cm")
+    plt.savefig("Histogram Sepal Width Comparison cm.png")
+    plt.clf()
+    print("You will find your file here: "+ os.getcwd()+ "\\" + "Histogram Sepal Width Comparison cm.png")
+
 
 
 if __name__ == "__main__":
