@@ -11,26 +11,36 @@ The Iris data set is used by students of computer programming and machine learni
 
 Image source: https://www.slideshare.net/BrittanyLasseigne/an-introduction-to-machine-learning-and-genomics
 
-## DEMO
 
-Watch video demo https://youtu.be/tP9lVF4gXQs
+## SETTING PYTHON UP TO RUN ANALYSIS.PY
+To view screens in action please watch video demo I have provided at https://youtu.be/tP9lVF4gXQs which demonstrates downloading the folder from my github https://github.com/g00387822/pands-project
 
-For more comprehensive advice on how to use Analysis.py please refer to the README.docx which has screenshots.
+To be able to run Analysis.py you will need to download the entire folder that contains the Analysis.py file, associated IRIS.csv file, and picture files used in the application.
 
-To be able to run Analysis.py you will need to download the Analysis.py file and the IRIScsv.csv file from my github https://github.com/g00387822/pands-project
-
-Both the Analysis.py file and the IRIS.csv file will need to be saved in the same directory.
 If you don’t already have python installed you will need to download version 3.7 or later from https://www.python.org/downloads/
 While installing Python it is very important to tick the option to add Python to PATH. 
 
-
-## SETTING PYTHON UP TO RUN ANALYSIS.PY
+##SETTING PYTHON UP TO RUN ANALYSIS.PY
 Located at the top of the source code of most python programs are a list of modules that the application uses.
+
+#imports required to run analysis.py
+import pandas as pd #used for handling data
+import numpy as np #used for handling data
+import seaborn as sns #used for graphs
+import matplotlib as mpl #used for graphs
+import matplotlib.pyplot as plt #used for graph plotting
+from colorama import init, Fore, Back, Style #used for colourful fonts
+from PIL import Image # used for image display
+import matplotlib.image as mpimg # used for being able to add background images to graphs
+import keyboard  # using module keyboard
+import os #for handling keyboard reactions and pausing
 
 Before you run Analysis.py PIP INSTALLS may need to get the above modules to work. In the event of errors, check the source code to see which modules need to be installed.
 Generally a PIP install has to be done for any module used in the application that isn’t installed on your computer / version of Python. If the Python application isn’t loading when double clicked or run from your python editor, you will need to do PIP installs from the command prompt.
 Here are examples of pip installs that you will need to do for any module not found error for this application. Get the name of module from module not found error and pip install it from your command prompt on windows of mac terminal.
 e.g. pip install colorama, pip install PIL, pip install pandas, pip install matplotlib, pip install seaborn
+
+If Python has correctly been installed to PATH you should be able to initiate the PIP install command from any directory location.
 
 With PIP installs all done, to activate Analysis.py you should simply be able to double click on the file and Python will run it automatically, alternatively you can run it from Python editor of your choice such as IDLE or Visual Studio Code.
 
