@@ -1,0 +1,94 @@
+Average Of All Iris
+                     0
+sepal_length  5.843333
+sepal_width   3.057333
+petal_length  3.758000
+petal_width   1.199333
+
+ 
+Average Of Setosa
+                  0
+sepal_length  5.006
+sepal_width   3.428
+petal_length  1.462
+petal_width   0.246
+
+ 
+Average Of Versicolor
+                  0
+sepal_length  5.936
+sepal_width   2.770
+petal_length  4.260
+petal_width   1.326
+
+ 
+Average Of Virginica
+                  0
+sepal_length  6.588
+sepal_width   2.974
+petal_length  5.552
+petal_width   2.026
+
+ 
+Minimum Of All Iris
+                   0
+sepal_length     4.3
+sepal_width        2
+petal_length       1
+petal_width      0.1
+type          Setosa
+
+ 
+Minimum Of Setosa
+                   0
+sepal_length     4.3
+sepal_width      2.3
+petal_length       1
+petal_width      0.1
+type          Setosa
+
+ 
+Minimum Of Versicolor
+                       0
+sepal_length         4.9
+sepal_width            2
+petal_length           3
+petal_width            1
+type          Versicolor
+
+ 
+Minimum Of Virginica
+                      0
+sepal_length        4.9
+sepal_width         2.2
+petal_length        4.5
+petal_width         1.4
+type          Virginica
+Maximum Of All Iris
+                      0
+sepal_length        7.9
+sepal_width         4.4
+petal_length        6.9
+petal_width         2.5
+type          Virginica
+Maximum Of All Setosa
+                   0
+sepal_length     5.8
+sepal_width      4.4
+petal_length     1.9
+petal_width      0.6
+type          Setosa
+Maximum Of All Versicolor
+                       0
+sepal_length           7
+sepal_width          3.4
+petal_length         5.1
+petal_width          1.8
+type          Versicolor
+Maximum Of All Virginica
+                      0
+sepal_length        7.9
+sepal_width         3.8
+petal_length        6.9
+petal_width         2.5
+type          Virginica
