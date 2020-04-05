@@ -2,8 +2,8 @@
 Project 2020
 
 ## SUMMARY
-##THE IRIS DATASET
-##Linear Discriminant Analysis
+## THE IRIS DATASET
+## Linear Discriminant Analysis
 Studying the Iris flower data set, is the ideal starting place to learn LDA (Linear Discriminant Analysis) and to develop data plotting and extraction skills with Python.  This is because the data set is small, it contains 3 classes of 50 instances each, where each class refers to a type of iris plant. Containing only 150 observations of petal length, petal width, sepal width, sepal length the data set is small but not trivial.
 Teachers lover the Iris data set because most students can relate to what flowers are, and understand the end result of being able to identity and categorise into different types. Linear Discriminant Analysis is also extensively used by geneticists in determining which genes respond well to drug tests, it is also was the first statistical method used for Bankruptcy prediction, Face recognition, and widely used in Marketing. 
 Rather than beginning to learn LDA through doing categorisation of a complex subject matter like genetics which could involve thousands of genes and variable factors, the Iris data set allows the beginner to be able to quickly see the result of LDA successfully with a small amount of data and a few simple commands in Python using some very powerful libraries such as Matplotlib, Pandas, Seaborn, Scikit Learn.
@@ -20,10 +20,10 @@ To be able to run Analysis.py you will need to download the entire folder that c
 If you don’t already have python installed you will need to download version 3.7 or later from https://www.python.org/downloads/
 While installing Python it is very important to tick the option to add Python to PATH. 
 
-##SETTING PYTHON UP TO RUN ANALYSIS.PY
+## SETTING PYTHON UP TO RUN ANALYSIS.PY
 Located at the top of the source code of most python programs are a list of modules that the application uses.
 
-#imports required to run analysis.py
+## imports required to run analysis.py
 import pandas as pd #used for handling data
 import numpy as np #used for handling data
 import seaborn as sns #used for graphs
