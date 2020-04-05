@@ -17,7 +17,7 @@ For more comprehensive advice on how to use Analysis.py please refer to the READ
 
 To be able to run Analysis.py you will need to download the Analysis.py file and the IRIScsv.csv file from my github https://github.com/g00387822/pands-project
 
-Both the Analysis.py file and the IRIScsv.csv file will need to be saved in the same directory.
+Both the Analysis.py file and the IRIS.csv file will need to be saved in the same directory.
 If you don’t already have python installed you will need to download version 3.7 or later from https://www.python.org/downloads/
 While installing Python it is very important to tick the option to add Python to PATH. 
 

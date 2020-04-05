@@ -133,9 +133,7 @@ def pause_or_quit(): #used for handling scrolling through the program
 
 def Introduction_To_Iris_Data_Set():
     print(Fore.GREEN + """
-
 INTRODUCTION TO THE IRIS DATASET
-
 An understanding of the Iris flower data set, is  the ideal starting place to learn LDA (Linear Discriminant Analysis). Linear Discriminant Analysis was the first statistical method used for Bankruptcy prediction, Face recognition, and widely used in Marketing. These modern day LDA technologies have roots in the work of Sir Ronald Alymer Fisher, a British statistician and geneticist, who is acclaimed for his work in statistics. In 1936 Fisher introduced the Iris flower data set as an example of discriminant analysis. 
 The iris data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant. Containing only 150 observations of petal length, petal width, sepal width, sepal length the data set is small but not trivial.  The Iris dataset is deservedly widely used throughout statistical science, especially for illustrating various problems in statistical graphics, multivariate statistics and machine learning.
 The Iris data set is such a popular data set for teaching computer science and machine learning, so it is inbuilt and accessible in machine learning module libraries used with Python such as scikit learn and R.
@@ -146,24 +144,15 @@ The Iris data set is such a popular data set for teaching computer science and m
     pause_or_quit()
 
     print(Fore.GREEN + """
-
-
 This python application is used to access the Iris Dataset
-
 This python application creates a text summary of the
-
 Mean sizes
 Minimum sizes
 Maximum sizes
-
 of the setosa, versicolor and virginica species of Iris.
-
 This python application also imports the pandas, matplotlib, seaborn, sklearn modules to provide graphical plot analysis
 in form of scatter plots and histograms.
-
 Comparing the species sepal length, sepal width, petal length, petal width.
-
-
 """)
     pause_or_quit()
 
@@ -171,13 +160,10 @@ Comparing the species sepal length, sepal width, petal length, petal width.
 def View_Image_Of_Iris_Varieties():
 
     print(Fore.GREEN + """This simple line of code can be used to load images
-
 from PIL import Image
 image = Image.open('test.png')
 image.show()
-
 source: https://stackoverflow.com/questions/35286540/display-an-image-with-python
-
 Press key to see image load.
 """)
  
@@ -231,20 +217,14 @@ minimum_of_Virginica = iris_virginica.min(axis = 0, skipna = True)
 def View_Average_Sizes_Iris():
     print(Fore.GREEN + """
 CODE USED TO GET THE AVERAGE SIZE OF ALL IRIS
-
 # importing pandas as pd 
 import pandas as pd
-
 # Creating the dataframe 
 iris = pd.read_csv('IRIS.csv')
-
 # sum over the column axis.
 average_of_data = iris.mean(axis = 0, skipna = True)
-
 print("Average Sizes of All Iris Data")
 print(average_of_data)
-
-
 RESULTS OF CODE
 """)
 
@@ -265,23 +245,16 @@ def View_Average_of_Setosa():
 
     print(Fore.GREEN +"""
 CODE USED TO GET THE AVERAGE SIZE OF SETOSA
-
 # importing pandas as pd 
 import pandas as pd
-
 # Creating the dataframe 
 iris = pd.read_csv('IRIS.csv')
-
 #Used for filtering type column
 iris_setosa = iris.loc[iris['type'] == 'Setosa']
-
 #Used for calculating averages
 average_of_Setosa = iris_setosa.mean(axis = 0, skipna = True)
-
 print("Average of Setosa")
 print(pd.DataFrame(average_of_Setosa))
-
-
 RESULTS OF CODE
 """)
     
@@ -307,20 +280,14 @@ def View_Average_of_Virginica():
 def View_Minimum_Sizes_Iris():
     print(Fore.GREEN + """
 CODE USED TO GET THE MINIMUM SIZE OF ALL IRIS
-
 # importing pandas as pd 
 import pandas as pd
-
 # Creating the dataframe 
 iris = pd.read_csv('IRIS.csv')
-
 # sum over the column axis.
 minimum_of_data = iris.min(axis = 0, skipna = True)
-
 print("Minimum Sizes of All Iris Data")
 print(minimum_of_data)
-
-
 RESULTS OF CODE
 """)
 
@@ -340,23 +307,16 @@ def View_Minimum_Sizes_Setosa():
 
     print(Fore.GREEN +"""
 CODE USED TO GET THE MINIMUM SIZE OF SETOSA
-
 # importing pandas as pd 
 import pandas as pd
-
 # Creating the dataframe 
 iris = pd.read_csv('IRIS.csv')
-
 #Used for filtering type column
 iris_setosa = iris.loc[iris['type'] == 'Setosa']
-
 #Used for calculating averages
 minimum_of_Setosa = iris_setosa.min(axis = 0, skipna = True)
-
 print("Minimum of Setosa")
 print(pd.DataFrame(minimum_of_Setosa))
-
-
 RESULTS OF CODE
 """)
     
@@ -383,20 +343,14 @@ def View_Minimum_Sizes_Virginica():
 def View_Maximum_Sizes_Iris():
     print(Fore.GREEN + """
 CODE USED TO GET THE MAXIMUM SIZE OF ALL IRIS
-
 # importing pandas as pd 
 import pandas as pd
-
 # Creating the dataframe 
 iris = pd.read_csv('IRIS.csv')
-
 # sum over the column axis.
 maximum_of_data = iris.max(axis = 0, skipna = True)
-
 print("Maximum Sizes of All Iris Data")
 print(maximum_of_data)
-
-
 RESULTS OF CODE
 """)
 
@@ -413,23 +367,16 @@ def View_Maximum_Sizes_Setosa():
 
     print(Fore.GREEN +"""
 CODE USED TO GET THE MAXIMUM SIZE OF SETOSA
-
 # importing pandas as pd 
 import pandas as pd
-
 # Creating the dataframe 
 iris = pd.read_csv('IRIS.csv')
-
 #Used for filtering type column
 iris_setosa = iris.loc[iris['type'] == 'Setosa']
-
 #Used for calculating averages
 maximum_of_Setosa = iris_setosa.max(axis = 0, skipna = True)
-
 print("Maximum of Setosa")
 print(pd.DataFrame(maximum_of_Setosa))
-
-
 RESULTS OF CODE
 """)
 
@@ -495,18 +442,13 @@ def Save_Summary_Of_Average_Iris_Sizes_To_Text_File():
 def View_Paired_Graph_Plots():
 
     print(Fore.GREEN +"""CODE USED TO GET GRAPH PAIRS OF ALL IRIS DATA
-
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 df = pd.read_csv("IRIS.csv")
 sns.pairplot(df, hue="type")
 plt.show()
-
 Source: https://web.microsoftstream.com/video/025ef713-d7c8-492f-97f4-5590015da029
-
 PRESS KEY TO CONTINUE TO SEE RESULTS OF CODE
 """)
 
@@ -519,18 +461,13 @@ PRESS KEY TO CONTINUE TO SEE RESULTS OF CODE
 def Save_Paired_Graph_Plots():
 
     print(Fore.GREEN +"""CODE USED TO GET GRAPH PAIRS OF ALL IRIS DATA
-
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 df = pd.read_csv("IRIS.csv")
 sns.pairplot(df, hue="type")
 plt.savefig("Paired Graph Plots.png")
 plt.clf()
-
-
 PRESS KEY TO SAVE
 """)
 
