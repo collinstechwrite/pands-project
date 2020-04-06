@@ -20,6 +20,122 @@ To be able to run Analysis.py you will need to download the entire folder that c
 If you don’t already have python installed you will need to download version 3.7 or later from https://www.python.org/downloads/
 While installing Python it is very important to tick the option to add Python to PATH. 
 
+
+
+
+
+# MENU ITEMS OF ANALYSIS.PY 
+
+# 1 – Introduction To Iris Data Set
+•	This section is simple print summary about the Iris Data Set
+•	It is followed by a very simple description about the Python application.
+# 2 - View Image Of Iris Varieties
+•	This section is a simple demonstration that Python can load images
+•	It shows the user the code for how this can be done.
+e.g. CODE USED TO DISPLAY AN IMAGE WITH PYTHON
+from PIL import Image
+image = Image.open('test.png')
+image.show()
+
+https://stackoverflow.com/questions/35286540/display-an-image-with-python
+
+Python, just like Excel, has the full range of inbuilt aggregate commands. In this Python Application I provide a cursory demonstration of how these aggregate functions when combined with Pandas library are coded to get results straight from the CSV file. These are demonstrated in menu items 3,4,5.
+
+# 3 – View Average Sizes Iris
+•	This section is a simple demonstration that the library Pandas is very effective in extracting the Average / Mean of the data.
+•	It shows the user the code for how this can be done
+•	e.g. CODE USED TO GET THE MINIMUM SIZE OF SETOSA
+# importing pandas as pd 
+import pandas as pd
+# Creating the dataframe 
+iris = pd.read_csv('IRIS.csv')
+#Used for filtering type column
+iris_setosa = iris.loc[iris['type'] == 'Setosa']
+#Used for calculating averages
+minimum_of_Setosa = iris_setosa.min(axis = 0, skipna = True)
+print("Minimum of Setosa")
+print(pd.DataFrame(minimum_of_Setosa))
+
+Pandas Dataframe
+https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
+https://cmdlinetips.com/2019/10/pandas-groupby-13-functions-to-aggregate/
+https://www.geeksforgeeks.org/python-pandas-dataframe-mean/
+
+# 4 – View Minimum Sizes Iris
+•	This section is a simple demonstration that the library Pandas is very effective in extracting the Minimum of the data.
+•	It shows the user the code for how this can be done
+•	e.g. CODE USED TO GET THE MINIMUM SIZE OF SETOSA
+# importing pandas as pd 
+import pandas as pd
+# Creating the dataframe 
+iris = pd.read_csv('IRIS.csv')
+#Used for filtering type column
+iris_setosa = iris.loc[iris['type'] == 'Setosa']
+#Used for calculating averages
+minimum_of_Setosa = iris_setosa.min(axis = 0, skipna = True)
+print("Minimum of Setosa")
+print(pd.DataFrame(minimum_of_Setosa))
+
+Pandas Dataframe
+https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
+https://cmdlinetips.com/2019/10/pandas-groupby-13-functions-to-aggregate/
+https://www.geeksforgeeks.org/python-pandas-dataframe-mean/
+
+# 5 – View Maximum Sizes Iris
+•	This section is a simple demonstration that the library Pandas is very effective in extracting the Maximum of the data.
+•	It shows the user the code for how this can be done
+•	e.g. CODE USED TO GET THE MAXIMUM SIZE OF ALL IRIS
+# importing pandas as pd 
+import pandas as pd
+# Creating the dataframe 
+iris = pd.read_csv('IRIS.csv')
+# sum over the column axis.
+maximum_of_data = iris.max(axis = 0, skipna = True)
+print("Maximum Sizes of All Iris Data")
+print(maximum_of_data)
+Pandas Dataframe
+https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
+https://cmdlinetips.com/2019/10/pandas-groupby-13-functions-to-aggregate/
+https://www.geeksforgeeks.org/python-pandas-dataframe-mean/
+
+-----------------------------------
+# 6 – Save Summary Data To Text File
+•	This saves the data from the Pandas dataframe summaries of Average, Minimum and Maximum sizes to a text file.
+https://stackoverflow.com/questions/5214578/print-string-to-text-file
+ -----------------------------------
+# 7 – View Paired Graph Plots
+•	This demonstrates to the user, the functionality from Seaborne / Matplotlib Paired Plots
+# 8 – View Scatter Plots
+•	This demonstrates to the user, the functionality from Seaborne / Matplotlib Scatter Plots
+ 
+# 9 – View Histograms
+•	This demonstrates to the user, the functionality from Seaborne / Matplotlib Histograms
+
+Seaborn and Matplotlib Plots
+•	https://web.microsoftstream.com/video/025ef713-d7c8-492f-97f4-5590015da029
+•	https://seaborn.pydata.org/generated/seaborn.scatterplot.html
+•	https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
+•	https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
+•	https://stackoverflow.com/questions/51400076/change-seaborn-pair-plot-figure-size
+-----------------------------------
+# 10 – Save Paired Graph Plots 
+•	This saves a Paired Plot graph for the user
+•	It also uses the os module to show the user the current working directory of where the file is saved to
+https://web.microsoftstream.com/video/025ef713-d7c8-492f-97f4-5590015da029
+https://seaborn.pydata.org/generated/seaborn.pairplot.html
+# 11 – Save Scatter Plots   
+•	This saves all variations of scatter plots for the user
+•	It also uses the os module to show the user the current working directory of where the files are saved to
+# 12 – Save Histograms
+•	This saves all variations of histograms for the user
+•	It also uses the os module to show the user the current working directory of where the files are saved to
+
+Saving graph plots
+•	https://web.microsoftstream.com/video/737a2b0f-5e2e-4831-a020-5e5d3f8a05e9
+ -----------------------------------
+# x – Exit application
+ 
+
 ## SETTING PYTHON UP TO RUN ANALYSIS.PY
 Located at the top of the source code of most python programs are a list of modules that the application uses.
 
