@@ -1,6 +1,9 @@
 #pands-project
 Project 2020
 
+[![Watch the video](https://github.com/g00387822/pands-project/blob/master/video.png)](https://youtu.be/tP9lVF4gXQs)
+
+
 ## SUMMARY
 ## THE IRIS DATASET
 ## Linear Discriminant Analysis
