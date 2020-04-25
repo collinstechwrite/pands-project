@@ -34,9 +34,6 @@ If you don’t already have python installed you will need to download version 3
 While installing Python it is very important to tick the option to add Python to PATH. 
 
 
-
-
-
 # MENU ITEMS OF ANALYSIS.PY 
 
 # 1 – Introduction To Iris Data Set
@@ -45,10 +42,14 @@ While installing Python it is very important to tick the option to add Python to
 # 2 - View Image Of Iris Varieties
 •	This section is a simple demonstration that Python can load images
 •	It shows the user the code for how this can be done.
+
 e.g. CODE USED TO DISPLAY AN IMAGE WITH PYTHON
+
+```
 from PIL import Image
 image = Image.open('test.png')
 image.show()
+```
 
 https://stackoverflow.com/questions/35286540/display-an-image-with-python
 
@@ -59,12 +60,15 @@ Python, just like Excel, has the full range of inbuilt aggregate commands. In th
 •	It shows the user the code for how this can be done
 •	e.g. CODE USED TO GET THE MINIMUM SIZE OF SETOSA
 
+```
 import pandas as pd
 iris = pd.read_csv('IRIS.csv')
 iris_setosa = iris.loc[iris['type'] == 'Setosa']
 minimum_of_Setosa = iris_setosa.min(axis = 0, skipna = True)
 print("Minimum of Setosa")
 print(pd.DataFrame(minimum_of_Setosa))
+```
+
 
 Pandas Dataframe
 https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
@@ -76,12 +80,14 @@ https://www.geeksforgeeks.org/python-pandas-dataframe-mean/
 •	It shows the user the code for how this can be done
 •	e.g. CODE USED TO GET THE MINIMUM SIZE OF SETOSA
 
+```
 import pandas as pd
 iris = pd.read_csv('IRIS.csv')
 iris_setosa = iris.loc[iris['type'] == 'Setosa']
 minimum_of_Setosa = iris_setosa.min(axis = 0, skipna = True)
 print("Minimum of Setosa")
 print(pd.DataFrame(minimum_of_Setosa))
+```
 
 Pandas Dataframe
 https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
@@ -92,12 +98,14 @@ https://www.geeksforgeeks.org/python-pandas-dataframe-mean/
 •	This section is a simple demonstration that the library Pandas is very effective in extracting the Maximum of the data.
 •	It shows the user the code for how this can be done
 •	e.g. CODE USED TO GET THE MAXIMUM SIZE OF ALL IRIS
- 
+
+``` 
 import pandas as pd
 iris = pd.read_csv('IRIS.csv')
 maximum_of_data = iris.max(axis = 0, skipna = True)
 print("Maximum Sizes of All Iris Data")
 print(maximum_of_data)
+```
 
 Pandas Dataframe
 https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
@@ -125,26 +133,36 @@ Seaborn and Matplotlib Plots
 •	https://stackoverflow.com/questions/51400076/change-seaborn-pair-plot-figure-size
 -----------------------------------
 # 10 – Save Paired Graph Plots 
+
 •	This saves a Paired Plot graph for the user
 •	It also uses the os module to show the user the current working directory of where the file is saved to
+
 https://web.microsoftstream.com/video/025ef713-d7c8-492f-97f4-5590015da029
 https://seaborn.pydata.org/generated/seaborn.pairplot.html
+
 # 11 – Save Scatter Plots   
+
 •	This saves all variations of scatter plots for the user
 •	It also uses the os module to show the user the current working directory of where the files are saved to
+
 # 12 – Save Histograms
+
 •	This saves all variations of histograms for the user
 •	It also uses the os module to show the user the current working directory of where the files are saved to
 
 # Saving graph plots
+
 •	https://web.microsoftstream.com/video/737a2b0f-5e2e-4831-a020-5e5d3f8a05e9
+
  -----------------------------------
+
 # x – Exit application
  
 
 ## SETTING PYTHON UP TO RUN ANALYSIS.PY
 Located at the top of the source code of most python programs are a list of modules that the application uses.
 
+```
 ## imports required to run analysis.py
 import pandas as pd #used for handling data
 import numpy as np #used for handling data
@@ -156,6 +174,7 @@ from PIL import Image # used for image display
 import matplotlib.image as mpimg # used for being able to add background images to graphs
 import keyboard  # using module keyboard
 import os #for handling keyboard reactions and pausing
+```
 
 Before you run Analysis.py PIP INSTALLS may need to get the above modules to work. In the event of errors, check the source code to see which modules need to be installed.
 Generally a PIP install has to be done for any module used in the application that isn’t installed on your computer / version of Python. If the Python application isn’t loading when double clicked or run from your python editor, you will need to do PIP installs from the command prompt.
