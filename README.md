@@ -9,6 +9,14 @@ Teachers lover the Iris data set because most students can relate to what flower
 Rather than beginning to learn LDA through doing categorisation of a complex subject matter like genetics which could involve thousands of genes and variable factors, the Iris data set allows the beginner to be able to quickly see the result of LDA successfully with a small amount of data and a few simple commands in Python using some very powerful libraries such as Matplotlib, Pandas, Seaborn, Scikit Learn.
 The Iris data set is used by students of computer programming and machine learning with the aim of LDA(Linear Discriminant Analysis),  to improve computer learning processes to be able to classify iris flowers among three species (setosa, versicolor or virginica) from measurements of length and width of sepals and petals.  Once understood this knowledge can then be applied to more advanced fields of computer science.
 
+
+Iris Flower Types: 
+![alt text][logo]
+
+[logo]: https://github.com/g00387822/pands-project/blob/master/iris-species.png "Types Of Iris Flower"
+
+
+
 Image source: https://www.slideshare.net/BrittanyLasseigne/an-introduction-to-machine-learning-and-genomics
 
 
