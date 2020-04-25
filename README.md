@@ -19,6 +19,11 @@ Iris Flower Types:
 
 Image source: https://www.slideshare.net/BrittanyLasseigne/an-introduction-to-machine-learning-and-genomics
 
+Modern day LDA technologies have roots in the work of Sir Ronald Alymer Fisher, a British statistician and geneticist, who is acclaimed for his work in statistics. In 1936 Fisher introduced the Iris flower data set as an example of discriminant analysis. 
+The Iris dataset is deservedly widely used throughout statistical science, especially for illustrating various problems in statistical graphics, multivariate statistics and machine learning.
+The Iris data set is such a popular data set for teaching Linear Discriminant Analysis to students of computer science and machine learning, that the data set is inbuilt and accessible in machine learning module libraries used with Python such as scikit learn and R.
+What is Linear Discriminant Analysis? In lay persons terms, it is being able to analyse data in such a way, that ‘When we plot the features, we can see that data is linearly separable. We can draw a line to separate the two groups. The problem is to find the line and to rotate the features in such a way to maximise the distance between the groups and to minimise the distance within the group.’
+This is where Python comes extremely useful to visualising the categories of the Iris DataSet Quickly.
 
 ## SETTING PYTHON UP TO RUN ANALYSIS.PY
 To view screens in action please watch video demo I have provided at https://youtu.be/tP9lVF4gXQs which demonstrates downloading the folder from my github https://github.com/g00387822/pands-project
@@ -53,13 +58,10 @@ Python, just like Excel, has the full range of inbuilt aggregate commands. In th
 •	This section is a simple demonstration that the library Pandas is very effective in extracting the Average / Mean of the data.
 •	It shows the user the code for how this can be done
 •	e.g. CODE USED TO GET THE MINIMUM SIZE OF SETOSA
-# importing pandas as pd 
+
 import pandas as pd
-# Creating the dataframe 
 iris = pd.read_csv('IRIS.csv')
-#Used for filtering type column
 iris_setosa = iris.loc[iris['type'] == 'Setosa']
-#Used for calculating averages
 minimum_of_Setosa = iris_setosa.min(axis = 0, skipna = True)
 print("Minimum of Setosa")
 print(pd.DataFrame(minimum_of_Setosa))
@@ -73,13 +75,10 @@ https://www.geeksforgeeks.org/python-pandas-dataframe-mean/
 •	This section is a simple demonstration that the library Pandas is very effective in extracting the Minimum of the data.
 •	It shows the user the code for how this can be done
 •	e.g. CODE USED TO GET THE MINIMUM SIZE OF SETOSA
-# importing pandas as pd 
+
 import pandas as pd
-# Creating the dataframe 
 iris = pd.read_csv('IRIS.csv')
-#Used for filtering type column
 iris_setosa = iris.loc[iris['type'] == 'Setosa']
-#Used for calculating averages
 minimum_of_Setosa = iris_setosa.min(axis = 0, skipna = True)
 print("Minimum of Setosa")
 print(pd.DataFrame(minimum_of_Setosa))
@@ -93,14 +92,13 @@ https://www.geeksforgeeks.org/python-pandas-dataframe-mean/
 •	This section is a simple demonstration that the library Pandas is very effective in extracting the Maximum of the data.
 •	It shows the user the code for how this can be done
 •	e.g. CODE USED TO GET THE MAXIMUM SIZE OF ALL IRIS
-# importing pandas as pd 
+ 
 import pandas as pd
-# Creating the dataframe 
 iris = pd.read_csv('IRIS.csv')
-# sum over the column axis.
 maximum_of_data = iris.max(axis = 0, skipna = True)
 print("Maximum Sizes of All Iris Data")
 print(maximum_of_data)
+
 Pandas Dataframe
 https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
 https://cmdlinetips.com/2019/10/pandas-groupby-13-functions-to-aggregate/
@@ -138,7 +136,7 @@ https://seaborn.pydata.org/generated/seaborn.pairplot.html
 •	This saves all variations of histograms for the user
 •	It also uses the os module to show the user the current working directory of where the files are saved to
 
-Saving graph plots
+# Saving graph plots
 •	https://web.microsoftstream.com/video/737a2b0f-5e2e-4831-a020-5e5d3f8a05e9
  -----------------------------------
 # x – Exit application
