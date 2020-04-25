@@ -45,8 +45,8 @@ While installing Python it is very important to tick the option to add Python to
 
 e.g. CODE USED TO DISPLAY AN IMAGE WITH PYTHON
 
-```
-from PIL import Image
+
+```from PIL import Image
 image = Image.open('test.png')
 image.show()
 ```
@@ -60,8 +60,7 @@ Python, just like Excel, has the full range of inbuilt aggregate commands. In th
 •	It shows the user the code for how this can be done
 •	e.g. CODE USED TO GET THE MINIMUM SIZE OF SETOSA
 
-```
-import pandas as pd
+```import pandas as pd
 iris = pd.read_csv('IRIS.csv')
 iris_setosa = iris.loc[iris['type'] == 'Setosa']
 minimum_of_Setosa = iris_setosa.min(axis = 0, skipna = True)
@@ -80,8 +79,7 @@ https://www.geeksforgeeks.org/python-pandas-dataframe-mean/
 •	It shows the user the code for how this can be done
 •	e.g. CODE USED TO GET THE MINIMUM SIZE OF SETOSA
 
-```
-import pandas as pd
+```import pandas as pd
 iris = pd.read_csv('IRIS.csv')
 iris_setosa = iris.loc[iris['type'] == 'Setosa']
 minimum_of_Setosa = iris_setosa.min(axis = 0, skipna = True)
@@ -99,8 +97,7 @@ https://www.geeksforgeeks.org/python-pandas-dataframe-mean/
 •	It shows the user the code for how this can be done
 •	e.g. CODE USED TO GET THE MAXIMUM SIZE OF ALL IRIS
 
-``` 
-import pandas as pd
+``` import pandas as pd
 iris = pd.read_csv('IRIS.csv')
 maximum_of_data = iris.max(axis = 0, skipna = True)
 print("Maximum Sizes of All Iris Data")
@@ -113,19 +110,28 @@ https://cmdlinetips.com/2019/10/pandas-groupby-13-functions-to-aggregate/
 https://www.geeksforgeeks.org/python-pandas-dataframe-mean/
 
 -----------------------------------
+
 # 6 – Save Summary Data To Text File
+
 •	This saves the data from the Pandas dataframe summaries of Average, Minimum and Maximum sizes to a text file.
+
 https://stackoverflow.com/questions/5214578/print-string-to-text-file
  -----------------------------------
+
 # 7 – View Paired Graph Plots
+
 •	This demonstrates to the user, the functionality from Seaborne / Matplotlib Paired Plots
+
 # 8 – View Scatter Plots
+
 •	This demonstrates to the user, the functionality from Seaborne / Matplotlib Scatter Plots
  
 # 9 – View Histograms
+
 •	This demonstrates to the user, the functionality from Seaborne / Matplotlib Histograms
 
 Seaborn and Matplotlib Plots
+
 •	https://web.microsoftstream.com/video/025ef713-d7c8-492f-97f4-5590015da029
 •	https://seaborn.pydata.org/generated/seaborn.scatterplot.html
 •	https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
@@ -162,9 +168,10 @@ https://seaborn.pydata.org/generated/seaborn.pairplot.html
 ## SETTING PYTHON UP TO RUN ANALYSIS.PY
 Located at the top of the source code of most python programs are a list of modules that the application uses.
 
-```
+
 ## imports required to run analysis.py
-import pandas as pd #used for handling data
+
+```import pandas as pd #used for handling data
 import numpy as np #used for handling data
 import seaborn as sns #used for graphs
 import matplotlib as mpl #used for graphs
