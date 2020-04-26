@@ -61,7 +61,32 @@ On limited data it is very hard to tell one plant from another simply from measu
 
 
 
+histograms: 
+![alt text][logo5]
 
+[logo5]: https://github.com/g00387822/pands-project/blob/master/histogramsdoc.png "histograms"
+
+
+
+However when you ‘rotate the features’ especially with multiple scatter graphs testing multiple permutations of the available variables to see if there is a correlation between e.g sepal length and petal length or sepal width and petal length, it becomes easier to differentiate the data of the different species and maximise the distance between the groups and to minimise the distance within the group.’
+ 
+Below I have edited in red the Iris data set graph from Dr Ian McLoughlin’s demonstration of Python and Seaborn, to show indicators of how measurements in the 2nd cluster emerge to distinguish one species from another.
+
+
+Searborne Analysis: 
+![alt text][logo6]
+
+[logo6]: https://github.com/g00387822/pands-project/blob/master/seaborneanalysis.png "seaborne analysis"
+
+At the time of writing this project we are in the middle of a global pandemic that was originally thought to only affect the elderly and people with underlying health conditions, as the virus has spread through asymptomatic carriers the world has gone into lockdown and people of all ages with no underlying health conditions are also beginning to die of the virus. 
+Scatter graphs and Histograms used in Linear Discriminant Analysis are a very powerful way to visualize data and display clusters and relationships to data.
+The skills we put in practicing learning the simple Iris dataset, may be the very same skills, with the right data, that will identify what are the commonalities between the mortalities of apparently healthy people and the elderly and people with underlying health conditions.  With knowledge and understanding of data more effective policies and strategies can be developed in practice and in law.
+Whether you are working in high security facial recognition, preventing bankruptcy of a FTSE 100 company or fighting a global pandemic. LDA and data visualisiation is cutting edge, and you can become experience in it using freely available Python and powerful libraries such as Matplotlib, Pandas, Seaborn, Scikit Learn.
+
+Uses: 
+![alt text][logo7]
+
+[logo6]: https://github.com/g00387822/pands-project/blob/master/uses.png "uses"
 
 
 
