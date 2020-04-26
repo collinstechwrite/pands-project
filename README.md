@@ -43,9 +43,21 @@ Using python and seaborne to generate graphs:
 We will explore further this idea of rotating the features of the data set, A cursory observation of the Fisher Iris data set using graphs plotted by Python, shows two clusters with rather obvious separation. One of the clusters (illustrated in blue) contains Iris setosa, while the other cluster contains both Iris virginica and Iris versicolor (illustrated in orange and green). Analysis of the second cluster would not be separable without the species information Fisher used.
 
 
+Two clusters with obvious separation: 
+![alt text][logo3]
+
+[logo3]: https://github.com/g00387822/pands-project/blob/master/sepalwidthsepallength.png "Two clusters with obvious separation"
 
 
+Only on further analysis of the proportions of sepal length, sepal width, petal length and petal width size, does it become easier to classify characteristics of the Iris Virginica and Iris Versicolor species.
+Scatter graphs are ideal for doing Linear Discriminant Analysis comparing two types of data. Using the scatter plot below that knowing the relationship between the width and length of sepals, gives you an increased chance of being able to identifying either a tall Virginica or a short Setosa. However with limited data on just Sepal heights and widths it is almost impossible to categorize the difference between the average Versicolor and average Virginica, unlike the Setosa, the average data of Vericolors and Virigincas are all mixed together in a cluster.
 
+Mixed clusters: 
+![alt text][logo4]
+
+[logo4]: https://github.com/g00387822/pands-project/blob/master/mixedclusters.png "Mixed Clusters"
+
+On limited data it is very hard to tell one plant from another simply from measurements of their sepal length or sepal widths. Histograms are used below for showing one type of data from each plant. Using these two histograms below you would be challenged to be able to tell the different between an average sized Veriscolor or Virginica from sepal sizes alone.
 
 
 
