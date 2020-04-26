@@ -1,10 +1,15 @@
-#pands-project
-Project 2020
+# pands-project
+# Project 2020
+
+## Contents
+### Part 1 Python Application Summary, watch video below first, download the zip folder containing analysis.py 
+### Part 2 Iris Data Set Summary, read online or download the word doc
 
 [![Watch the video](https://github.com/g00387822/pands-project/blob/master/video1.png)](https://youtu.be/tP9lVF4gXQs)
 
 
 [![Donwload analysis.py](https://github.com/g00387822/pands-project/blob/master/button.png)](https://github.com/g00387822/pands-project/archive/master.zip)
+[![Donwload Iris Data Word Doc](https://github.com/g00387822/pands-project/blob/master/buttonworddoc.png)](https://github.com/g00387822/pands-project/blob/master/README.docx)
 
 
 ## PYTHON APPLICATION SUMMARY
