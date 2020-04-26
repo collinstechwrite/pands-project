@@ -26,7 +26,32 @@ Modern day LDA technologies have roots in the work of Sir Ronald Alymer Fisher, 
 The Iris dataset is deservedly widely used throughout statistical science, especially for illustrating various problems in statistical graphics, multivariate statistics and machine learning.
 The Iris data set is such a popular data set for teaching Linear Discriminant Analysis to students of computer science and machine learning, that the data set is inbuilt and accessible in machine learning module libraries used with Python such as scikit learn and R.
 What is Linear Discriminant Analysis? In lay persons terms, it is being able to analyse data in such a way, that ‘When we plot the features, we can see that data is linearly separable. We can draw a line to separate the two groups. The problem is to find the line and to rotate the features in such a way to maximise the distance between the groups and to minimise the distance within the group.’
+
+SOURCES OF TEXT ABOVE
+https://en.wikipedia.org/wiki/Iris_flower_data_set
+https://en.wikipedia.org/wiki/Linear_discriminant_analysis
+
 This is where Python comes extremely useful to visualising the categories of the Iris DataSet Quickly.
+
+Using python and seaborne to generate graphs: 
+![alt text][logo2]
+
+[logo2]: https://github.com/g00387822/pands-project/blob/master/pythongraphs.png "Using python and seaborne to generate graphs"
+
+
+
+We will explore further this idea of rotating the features of the data set, A cursory observation of the Fisher Iris data set using graphs plotted by Python, shows two clusters with rather obvious separation. One of the clusters (illustrated in blue) contains Iris setosa, while the other cluster contains both Iris virginica and Iris versicolor (illustrated in orange and green). Analysis of the second cluster would not be separable without the species information Fisher used.
+
+
+
+
+
+
+
+
+
+
+
 
 ## SETTING PYTHON UP TO RUN ANALYSIS.PY
 To view screens in action please watch video demo I have provided at https://youtu.be/tP9lVF4gXQs which demonstrates downloading the folder from my github https://github.com/g00387822/pands-project
