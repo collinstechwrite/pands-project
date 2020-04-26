@@ -95,21 +95,15 @@ Over the next few pages I shall briefly summarize the twelve menu sections of a 
 The Python application contained within this project isn’t so much a demonstration of my understanding of the Iris Data Set, but serves more of an introduction to the users of what can be done with some of the basic commands and modules that are available for use with Python that can assist further analysis.
 
 
-Uses: 
+Analysis Menu: 
 ![alt text][logo8]
 
 [logo8]: https://github.com/g00387822/pands-project/blob/master/analysismenu.png "Analysis Menu"
 
+For composing the main menu for this project, I found Dr Gerard Harrison’s file useful as a clean template to modify for my purposes.
+https://learnonline.gmit.ie/mod/resource/view.php?id=81195
 
-
-
-## SETTING PYTHON UP TO RUN ANALYSIS.PY
-To view screens in action please watch video demo I have provided at https://youtu.be/tP9lVF4gXQs which demonstrates downloading the folder from my github https://github.com/g00387822/pands-project
-
-To be able to run Analysis.py you will need to download the entire folder that contains the Analysis.py file, associated IRIS.csv file, and picture files used in the application.
-
-If you don’t already have python installed you will need to download version 3.7 or later from https://www.python.org/downloads/
-While installing Python it is very important to tick the option to add Python to PATH. 
+There were a few sources which enabled me to complete the Python application. Prior to doing this assignment I had trained for an MTA in Python with ecollege, so already had an extensive amount of practice in some basic areas, hence my references to external sources may be light.
 
 
 # MENU ITEMS OF ANALYSIS.PY 
@@ -242,6 +236,18 @@ https://seaborn.pydata.org/generated/seaborn.pairplot.html
 
 # x – Exit application
  
+
+
+## SETTING PYTHON UP TO RUN ANALYSIS.PY
+To view screens in action please watch video demo I have provided at https://youtu.be/tP9lVF4gXQs which demonstrates downloading the folder from my github https://github.com/g00387822/pands-project
+
+To be able to run Analysis.py you will need to download the entire folder that contains the Analysis.py file, associated IRIS.csv file, and picture files used in the application.
+
+If you don’t already have python installed you will need to download version 3.7 or later from https://www.python.org/downloads/
+While installing Python it is very important to tick the option to add Python to PATH. 
+
+
+
 
 ## SETTING PYTHON UP TO RUN ANALYSIS.PY
 Located at the top of the source code of most python programs are a list of modules that the application uses.
