@@ -124,7 +124,7 @@ https://stackoverflow.com/questions/5214578/print-string-to-text-file
  
 # 9 – View Histograms
 
-•	This demonstrates to the user, the functionality from Seaborne / Matplotlib Histograms
+This demonstrates to the user, the functionality from Seaborne / Matplotlib Histograms
 
 Seaborn and Matplotlib Plots
 
@@ -133,7 +133,9 @@ https://seaborn.pydata.org/generated/seaborn.scatterplot.html
 https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
 https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
 https://stackoverflow.com/questions/51400076/change-seaborn-pair-plot-figure-size
+
 -----------------------------------
+
 # 10 – Save Paired Graph Plots 
 
 •	This saves a Paired Plot graph for the user
@@ -905,7 +907,7 @@ Image source: https://www.slideshare.net/BrittanyLasseigne/an-introduction-to-ma
 
 Modern day LDA technologies have roots in the work of Sir Ronald Alymer Fisher, a British statistician and geneticist, who is acclaimed for his work in statistics. In 1936 Fisher introduced the Iris flower data set as an example of discriminant analysis.
 
-*The Iris dataset is deservedly widely used throughout statistical science, especially for illustrating various problems in statistical graphics, multivariate statistics and machine learning.*
+*The Iris dataset is deservedly widely used throughout statistical science, especially for illustrating various problems in statistical graphics, multivariate statistics and machine learning.* https://stats.stackexchange.com/questions/74776/what-aspects-of-the-iris-data-set-make-it-so-successful-as-an-example-teaching
 
 The Iris data set is such a popular data set for teaching Linear Discriminant Analysis to students of computer science and machine learning, that the data set is inbuilt and accessible in machine learning module libraries used with Python such as scikit learn and R.
 
@@ -914,6 +916,7 @@ The Iris data set is such a popular data set for teaching Linear Discriminant An
 SOURCES OF TEXT ABOVE
 https://en.wikipedia.org/wiki/Iris_flower_data_set
 https://en.wikipedia.org/wiki/Linear_discriminant_analysis
+https://stats.stackexchange.com/questions/74776/what-aspects-of-the-iris-data-set-make-it-so-successful-as-an-example-teaching
 
 This is where Python comes extremely useful to visualising the categories of the Iris DataSet Quickly.
 
@@ -952,7 +955,7 @@ histograms:
 
 
 
-However when you ‘rotate the features’ especially with multiple scatter graphs testing multiple permutations of the available variables to see if there is a correlation between e.g sepal length and petal length or sepal width and petal length, it becomes easier to differentiate the data of the different species and maximise the distance between the groups and to minimise the distance within the group.’
+However when you **‘rotate the features’** especially with multiple scatter graphs testing multiple permutations of the available variables to see if there is a correlation between e.g sepal length and petal length or sepal width and petal length, it becomes easier to differentiate the data of the different species and maximise the distance between the groups and to minimise the distance within the group.’
  
 Below I have edited in red the Iris data set graph from Dr Ian McLoughlin’s demonstration of Python and Seaborn, to show indicators of how measurements in the 2nd cluster emerge to distinguish one species from another.
 
