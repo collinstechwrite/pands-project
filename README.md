@@ -7,6 +7,10 @@ Project 2020
 
 [![Watch the video](https://github.com/g00387822/pands-project/blob/master/video1.png)](https://youtu.be/tP9lVF4gXQs)
 
+
+[![Donwload analysis.py](https://github.com/g00387822/pands-project/blob/master/button.png)](https://github.com/g00387822/pands-project/archive/master.zip)
+
+
 Studying the Iris flower data set, is the ideal starting place to learn LDA (Linear Discriminant Analysis) and to develop data plotting and extraction skills with Python.  This is because the data set is small, it contains 3 classes of 50 instances each, where each class refers to a type of iris plant. Containing only 150 observations of petal length, petal width, sepal width, sepal length the data set is small but not trivial.
 
 Teachers lover the Iris data set because most students can relate to what flowers are, and understand the end result of being able to identity and categorise into different types. Linear Discriminant Analysis is also extensively used by geneticists in determining which genes respond well to drug tests, it is also was the first statistical method used for Bankruptcy prediction, Face recognition, and widely used in Marketing.
