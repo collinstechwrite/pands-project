@@ -8,8 +8,11 @@ Project 2020
 [![Watch the video](https://github.com/g00387822/pands-project/blob/master/video1.png)](https://youtu.be/tP9lVF4gXQs)
 
 Studying the Iris flower data set, is the ideal starting place to learn LDA (Linear Discriminant Analysis) and to develop data plotting and extraction skills with Python.  This is because the data set is small, it contains 3 classes of 50 instances each, where each class refers to a type of iris plant. Containing only 150 observations of petal length, petal width, sepal width, sepal length the data set is small but not trivial.
-Teachers lover the Iris data set because most students can relate to what flowers are, and understand the end result of being able to identity and categorise into different types. Linear Discriminant Analysis is also extensively used by geneticists in determining which genes respond well to drug tests, it is also was the first statistical method used for Bankruptcy prediction, Face recognition, and widely used in Marketing. 
+
+Teachers lover the Iris data set because most students can relate to what flowers are, and understand the end result of being able to identity and categorise into different types. Linear Discriminant Analysis is also extensively used by geneticists in determining which genes respond well to drug tests, it is also was the first statistical method used for Bankruptcy prediction, Face recognition, and widely used in Marketing.
+
 Rather than beginning to learn LDA through doing categorisation of a complex subject matter like genetics which could involve thousands of genes and variable factors, the Iris data set allows the beginner to be able to quickly see the result of LDA successfully with a small amount of data and a few simple commands in Python using some very powerful libraries such as Matplotlib, Pandas, Seaborn, Scikit Learn.
+
 The Iris data set is used by students of computer programming and machine learning with the aim of LDA(Linear Discriminant Analysis),  to improve computer learning processes to be able to classify iris flowers among three species (setosa, versicolor or virginica) from measurements of length and width of sepals and petals.  Once understood this knowledge can then be applied to more advanced fields of computer science.
 
 
@@ -22,10 +25,13 @@ Iris Flower Types:
 
 Image source: https://www.slideshare.net/BrittanyLasseigne/an-introduction-to-machine-learning-and-genomics
 
-Modern day LDA technologies have roots in the work of Sir Ronald Alymer Fisher, a British statistician and geneticist, who is acclaimed for his work in statistics. In 1936 Fisher introduced the Iris flower data set as an example of discriminant analysis. 
-The Iris dataset is deservedly widely used throughout statistical science, especially for illustrating various problems in statistical graphics, multivariate statistics and machine learning.
+Modern day LDA technologies have roots in the work of Sir Ronald Alymer Fisher, a British statistician and geneticist, who is acclaimed for his work in statistics. In 1936 Fisher introduced the Iris flower data set as an example of discriminant analysis.
+
+*The Iris dataset is deservedly widely used throughout statistical science, especially for illustrating various problems in statistical graphics, multivariate statistics and machine learning.*
+
 The Iris data set is such a popular data set for teaching Linear Discriminant Analysis to students of computer science and machine learning, that the data set is inbuilt and accessible in machine learning module libraries used with Python such as scikit learn and R.
-What is Linear Discriminant Analysis? In lay persons terms, it is being able to analyse data in such a way, that ‘When we plot the features, we can see that data is linearly separable. We can draw a line to separate the two groups. The problem is to find the line and to rotate the features in such a way to maximise the distance between the groups and to minimise the distance within the group.’
+
+**What is Linear Discriminant Analysis?** In lay persons terms, it is being able to analyse data in such a way, that *‘When we plot the features, we can see that data is linearly separable. We can draw a line to separate the two groups. The problem is to find the line and to **rotate** the features in such a way to maximise the distance between the groups and to minimise the distance within the group.’*
 
 SOURCES OF TEXT ABOVE
 https://en.wikipedia.org/wiki/Iris_flower_data_set
