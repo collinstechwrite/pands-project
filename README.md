@@ -1,102 +1,10 @@
 #pands-project
 Project 2020
 
-## SUMMARY
-## THE IRIS DATASET
-## Linear Discriminant Analysis
-
 [![Watch the video](https://github.com/g00387822/pands-project/blob/master/video1.png)](https://youtu.be/tP9lVF4gXQs)
 
 
 [![Donwload analysis.py](https://github.com/g00387822/pands-project/blob/master/button.png)](https://github.com/g00387822/pands-project/archive/master.zip)
-
-
-Studying the Iris flower data set, is the ideal starting place to learn LDA (Linear Discriminant Analysis) and to develop data plotting and extraction skills with Python.  This is because the data set is small, it contains 3 classes of 50 instances each, where each class refers to a type of iris plant. Containing only 150 observations of petal length, petal width, sepal width, sepal length the data set is small but not trivial.
-
-Teachers lover the Iris data set because most students can relate to what flowers are, and understand the end result of being able to identity and categorise into different types. Linear Discriminant Analysis is also extensively used by geneticists in determining which genes respond well to drug tests, it is also was the first statistical method used for Bankruptcy prediction, Face recognition, and widely used in Marketing.
-
-Rather than beginning to learn LDA through doing categorisation of a complex subject matter like genetics which could involve thousands of genes and variable factors, the Iris data set allows the beginner to be able to quickly see the result of LDA successfully with a small amount of data and a few simple commands in Python using some very powerful libraries such as Matplotlib, Pandas, Seaborn, Scikit Learn.
-
-The Iris data set is used by students of computer programming and machine learning with the aim of LDA(Linear Discriminant Analysis),  to improve computer learning processes to be able to classify iris flowers among three species (setosa, versicolor or virginica) from measurements of length and width of sepals and petals.  Once understood this knowledge can then be applied to more advanced fields of computer science.
-
-
-Iris Flower Types: 
-![alt text][logo]
-
-[logo]: https://github.com/g00387822/pands-project/blob/master/iris-species.png "Types Of Iris Flower"
-
-
-
-Image source: https://www.slideshare.net/BrittanyLasseigne/an-introduction-to-machine-learning-and-genomics
-
-Modern day LDA technologies have roots in the work of Sir Ronald Alymer Fisher, a British statistician and geneticist, who is acclaimed for his work in statistics. In 1936 Fisher introduced the Iris flower data set as an example of discriminant analysis.
-
-*The Iris dataset is deservedly widely used throughout statistical science, especially for illustrating various problems in statistical graphics, multivariate statistics and machine learning.*
-
-The Iris data set is such a popular data set for teaching Linear Discriminant Analysis to students of computer science and machine learning, that the data set is inbuilt and accessible in machine learning module libraries used with Python such as scikit learn and R.
-
-**What is Linear Discriminant Analysis?** In lay persons terms, it is being able to analyse data in such a way, that *‘When we plot the features, we can see that data is linearly separable. We can draw a line to separate the two groups. The problem is to find the line and to **rotate** the features in such a way to maximise the distance between the groups and to minimise the distance within the group.’*
-
-SOURCES OF TEXT ABOVE
-https://en.wikipedia.org/wiki/Iris_flower_data_set
-https://en.wikipedia.org/wiki/Linear_discriminant_analysis
-
-This is where Python comes extremely useful to visualising the categories of the Iris DataSet Quickly.
-
-Using python and seaborne to generate graphs: 
-![alt text][logo2]
-
-[logo2]: https://github.com/g00387822/pands-project/blob/master/pythongraphs.png "Using python and seaborne to generate graphs"
-
-
-
-We will explore further this idea of rotating the features of the data set, A cursory observation of the Fisher Iris data set using graphs plotted by Python, shows two clusters with rather obvious separation. One of the clusters (illustrated in blue) contains Iris setosa, while the other cluster contains both Iris virginica and Iris versicolor (illustrated in orange and green). Analysis of the second cluster would not be separable without the species information Fisher used.
-
-
-Two clusters with obvious separation: 
-![alt text][logo3]
-
-[logo3]: https://github.com/g00387822/pands-project/blob/master/sepalwidthsepallength.png "Two clusters with obvious separation"
-
-
-Only on further analysis of the proportions of sepal length, sepal width, petal length and petal width size, does it become easier to classify characteristics of the Iris Virginica and Iris Versicolor species.
-Scatter graphs are ideal for doing Linear Discriminant Analysis comparing two types of data. Using the scatter plot below that knowing the relationship between the width and length of sepals, gives you an increased chance of being able to identifying either a tall Virginica or a short Setosa. However with limited data on just Sepal heights and widths it is almost impossible to categorize the difference between the average Versicolor and average Virginica, unlike the Setosa, the average data of Vericolors and Virigincas are all mixed together in a cluster.
-
-Mixed clusters: 
-![alt text][logo4]
-
-[logo4]: https://github.com/g00387822/pands-project/blob/master/mixedclusters.png "Mixed Clusters"
-
-On limited data it is very hard to tell one plant from another simply from measurements of their sepal length or sepal widths. Histograms are used below for showing one type of data from each plant. Using these two histograms below you would be challenged to be able to tell the different between an average sized Veriscolor or Virginica from sepal sizes alone.
-
-
-
-histograms: 
-![alt text][logo5]
-
-[logo5]: https://github.com/g00387822/pands-project/blob/master/histogramsdoc.png "histograms"
-
-
-
-However when you ‘rotate the features’ especially with multiple scatter graphs testing multiple permutations of the available variables to see if there is a correlation between e.g sepal length and petal length or sepal width and petal length, it becomes easier to differentiate the data of the different species and maximise the distance between the groups and to minimise the distance within the group.’
- 
-Below I have edited in red the Iris data set graph from Dr Ian McLoughlin’s demonstration of Python and Seaborn, to show indicators of how measurements in the 2nd cluster emerge to distinguish one species from another.
-
-
-Searborne Analysis: 
-![alt text][logo6]
-
-[logo6]: https://github.com/g00387822/pands-project/blob/master/seaborneanalysis.png "seaborne analysis"
-
-At the time of writing this project we are in the middle of a global pandemic that was originally thought to only affect the elderly and people with underlying health conditions, as the virus has spread through asymptomatic carriers the world has gone into lockdown and people of all ages with no underlying health conditions are also beginning to die of the virus. 
-Scatter graphs and Histograms used in Linear Discriminant Analysis are a very powerful way to visualize data and display clusters and relationships to data.
-The skills we put in practicing learning the simple Iris dataset, may be the very same skills, with the right data, that will identify what are the commonalities between the mortalities of apparently healthy people and the elderly and people with underlying health conditions.  With knowledge and understanding of data more effective policies and strategies can be developed in practice and in law.
-Whether you are working in high security facial recognition, preventing bankruptcy of a FTSE 100 company or fighting a global pandemic. LDA and data visualisiation is cutting edge, and you can become experience in it using freely available Python and powerful libraries such as Matplotlib, Pandas, Seaborn, Scikit Learn.
-
-Uses: 
-![alt text][logo7]
-
-[logo7]: https://github.com/g00387822/pands-project/blob/master/uses.png "uses"
 
 
 ## PYTHON APPLICATION SUMMARY
@@ -965,3 +873,96 @@ if __name__ == "__main__":
 
 
 ```
+
+## SUMMARY
+## THE IRIS DATASET
+## Linear Discriminant Analysis
+
+Studying the Iris flower data set, is the ideal starting place to learn LDA (Linear Discriminant Analysis) and to develop data plotting and extraction skills with Python.  This is because the data set is small, it contains 3 classes of 50 instances each, where each class refers to a type of iris plant. Containing only 150 observations of petal length, petal width, sepal width, sepal length the data set is small but not trivial.
+
+Teachers lover the Iris data set because most students can relate to what flowers are, and understand the end result of being able to identity and categorise into different types. Linear Discriminant Analysis is also extensively used by geneticists in determining which genes respond well to drug tests, it is also was the first statistical method used for Bankruptcy prediction, Face recognition, and widely used in Marketing.
+
+Rather than beginning to learn LDA through doing categorisation of a complex subject matter like genetics which could involve thousands of genes and variable factors, the Iris data set allows the beginner to be able to quickly see the result of LDA successfully with a small amount of data and a few simple commands in Python using some very powerful libraries such as Matplotlib, Pandas, Seaborn, Scikit Learn.
+
+The Iris data set is used by students of computer programming and machine learning with the aim of LDA(Linear Discriminant Analysis),  to improve computer learning processes to be able to classify iris flowers among three species (setosa, versicolor or virginica) from measurements of length and width of sepals and petals.  Once understood this knowledge can then be applied to more advanced fields of computer science.
+
+
+Iris Flower Types: 
+![alt text][logo]
+
+[logo]: https://github.com/g00387822/pands-project/blob/master/iris-species.png "Types Of Iris Flower"
+
+
+
+Image source: https://www.slideshare.net/BrittanyLasseigne/an-introduction-to-machine-learning-and-genomics
+
+Modern day LDA technologies have roots in the work of Sir Ronald Alymer Fisher, a British statistician and geneticist, who is acclaimed for his work in statistics. In 1936 Fisher introduced the Iris flower data set as an example of discriminant analysis.
+
+*The Iris dataset is deservedly widely used throughout statistical science, especially for illustrating various problems in statistical graphics, multivariate statistics and machine learning.*
+
+The Iris data set is such a popular data set for teaching Linear Discriminant Analysis to students of computer science and machine learning, that the data set is inbuilt and accessible in machine learning module libraries used with Python such as scikit learn and R.
+
+**What is Linear Discriminant Analysis?** In lay persons terms, it is being able to analyse data in such a way, that *‘When we plot the features, we can see that data is linearly separable. We can draw a line to separate the two groups. The problem is to find the line and to **rotate** the features in such a way to maximise the distance between the groups and to minimise the distance within the group.’*
+
+SOURCES OF TEXT ABOVE
+https://en.wikipedia.org/wiki/Iris_flower_data_set
+https://en.wikipedia.org/wiki/Linear_discriminant_analysis
+
+This is where Python comes extremely useful to visualising the categories of the Iris DataSet Quickly.
+
+Using python and seaborne to generate graphs: 
+![alt text][logo2]
+
+[logo2]: https://github.com/g00387822/pands-project/blob/master/pythongraphs.png "Using python and seaborne to generate graphs"
+
+
+
+We will explore further this idea of rotating the features of the data set, A cursory observation of the Fisher Iris data set using graphs plotted by Python, shows two clusters with rather obvious separation. One of the clusters (illustrated in blue) contains Iris setosa, while the other cluster contains both Iris virginica and Iris versicolor (illustrated in orange and green). Analysis of the second cluster would not be separable without the species information Fisher used.
+
+
+Two clusters with obvious separation: 
+![alt text][logo3]
+
+[logo3]: https://github.com/g00387822/pands-project/blob/master/sepalwidthsepallength.png "Two clusters with obvious separation"
+
+
+Only on further analysis of the proportions of sepal length, sepal width, petal length and petal width size, does it become easier to classify characteristics of the Iris Virginica and Iris Versicolor species.
+Scatter graphs are ideal for doing Linear Discriminant Analysis comparing two types of data. Using the scatter plot below that knowing the relationship between the width and length of sepals, gives you an increased chance of being able to identifying either a tall Virginica or a short Setosa. However with limited data on just Sepal heights and widths it is almost impossible to categorize the difference between the average Versicolor and average Virginica, unlike the Setosa, the average data of Vericolors and Virigincas are all mixed together in a cluster.
+
+Mixed clusters: 
+![alt text][logo4]
+
+[logo4]: https://github.com/g00387822/pands-project/blob/master/mixedclusters.png "Mixed Clusters"
+
+On limited data it is very hard to tell one plant from another simply from measurements of their sepal length or sepal widths. Histograms are used below for showing one type of data from each plant. Using these two histograms below you would be challenged to be able to tell the different between an average sized Veriscolor or Virginica from sepal sizes alone.
+
+
+
+histograms: 
+![alt text][logo5]
+
+[logo5]: https://github.com/g00387822/pands-project/blob/master/histogramsdoc.png "histograms"
+
+
+
+However when you ‘rotate the features’ especially with multiple scatter graphs testing multiple permutations of the available variables to see if there is a correlation between e.g sepal length and petal length or sepal width and petal length, it becomes easier to differentiate the data of the different species and maximise the distance between the groups and to minimise the distance within the group.’
+ 
+Below I have edited in red the Iris data set graph from Dr Ian McLoughlin’s demonstration of Python and Seaborn, to show indicators of how measurements in the 2nd cluster emerge to distinguish one species from another.
+
+
+Searborne Analysis: 
+![alt text][logo6]
+
+[logo6]: https://github.com/g00387822/pands-project/blob/master/seaborneanalysis.png "seaborne analysis"
+
+At the time of writing this project we are in the middle of a global pandemic that was originally thought to only affect the elderly and people with underlying health conditions, as the virus has spread through asymptomatic carriers the world has gone into lockdown and people of all ages with no underlying health conditions are also beginning to die of the virus. 
+Scatter graphs and Histograms used in Linear Discriminant Analysis are a very powerful way to visualize data and display clusters and relationships to data.
+The skills we put in practicing learning the simple Iris dataset, may be the very same skills, with the right data, that will identify what are the commonalities between the mortalities of apparently healthy people and the elderly and people with underlying health conditions.  With knowledge and understanding of data more effective policies and strategies can be developed in practice and in law.
+Whether you are working in high security facial recognition, preventing bankruptcy of a FTSE 100 company or fighting a global pandemic. LDA and data visualisiation is cutting edge, and you can become experience in it using freely available Python and powerful libraries such as Matplotlib, Pandas, Seaborn, Scikit Learn.
+
+Uses: 
+![alt text][logo7]
+
+[logo7]: https://github.com/g00387822/pands-project/blob/master/uses.png "uses"
+
+
