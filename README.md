@@ -2,9 +2,10 @@
 # Project 2020
 
 ## Contents
-### Part 1 Python Application Summary, watch video below first, download the zip folder containing analysis.py 
+### Part 1 Python Application Summary, watch video below first, read python application summary (which includes Python and PIP installation advice), download the zip folder containing analysis.py and run analysis.py 
 ### Part 2 Iris Data Set Summary, read online or download the word doc
 
+# PART 1
 [![Watch the video](https://github.com/g00387822/pands-project/blob/master/video1.png)](https://youtu.be/tP9lVF4gXQs)
 
 
@@ -127,11 +128,11 @@ https://stackoverflow.com/questions/5214578/print-string-to-text-file
 
 Seaborn and Matplotlib Plots
 
-•	https://web.microsoftstream.com/video/025ef713-d7c8-492f-97f4-5590015da029
-•	https://seaborn.pydata.org/generated/seaborn.scatterplot.html
-•	https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
-•	https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
-•	https://stackoverflow.com/questions/51400076/change-seaborn-pair-plot-figure-size
+https://web.microsoftstream.com/video/025ef713-d7c8-492f-97f4-5590015da029
+https://seaborn.pydata.org/generated/seaborn.scatterplot.html
+https://stackoverflow.com/questions/50091591/plotting-seaborn-heatmap-on-top-of-a-background-picture
+https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
+https://stackoverflow.com/questions/51400076/change-seaborn-pair-plot-figure-size
 -----------------------------------
 # 10 – Save Paired Graph Plots 
 
@@ -878,6 +879,7 @@ if __name__ == "__main__":
 
 
 ```
+# PART 2
 
 ## SUMMARY
 ## THE IRIS DATASET
