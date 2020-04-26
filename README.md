@@ -86,7 +86,20 @@ Whether you are working in high security facial recognition, preventing bankrupt
 Uses: 
 ![alt text][logo7]
 
-[logo6]: https://github.com/g00387822/pands-project/blob/master/uses.png "uses"
+[logo7]: https://github.com/g00387822/pands-project/blob/master/uses.png "uses"
+
+
+## PYTHON APPLICATION SUMMARY
+
+Over the next few pages I shall briefly summarize the twelve menu sections of a simple Python program I designed called Analysis, which can be used to interrogate the Iris dataset.
+The Python application contained within this project isn’t so much a demonstration of my understanding of the Iris Data Set, but serves more of an introduction to the users of what can be done with some of the basic commands and modules that are available for use with Python that can assist further analysis.
+
+
+Uses: 
+![alt text][logo8]
+
+[logo8]: https://github.com/g00387822/pands-project/blob/master/analysismenu.png "Analysis Menu"
+
 
 
 
